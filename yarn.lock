@@ -3988,6 +3988,10 @@ lodash.isarray@^3.0.0:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/lodash.isarray/-/lodash.isarray-3.0.4.tgz#79e4eb88c36a8122af86f844aa9bcd851b5fbb55"
 
+lodash.isequal@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
+
 lodash.keys@^3.0.0:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/lodash.keys/-/lodash.keys-3.1.2.tgz#4dbc0472b156be50a0b286855d1bd0b0c656098a"
@@ -5225,6 +5229,12 @@ react-redux@^5.0.6:
     loose-envify "^1.1.0"
     prop-types "^15.5.10"
 
+react-resizable-box@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/react-resizable-box/-/react-resizable-box-2.0.6.tgz#c6fbd7c0bac7a6678eb32d0993cab7b601bea8e7"
+  dependencies:
+    lodash.isequal "^4.5.0"
+
 react-router-redux@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/react-router-redux/-/react-router-redux-4.0.8.tgz#227403596b5151e182377dab835b5d45f0f8054e"
@@ -6440,11 +6450,7 @@ vega-dataflow@3:
     vega-loader "2"
     vega-util "1"
 
-vega-datasets@^1.10.0:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/vega-datasets/-/vega-datasets-1.10.0.tgz#fe923df5aa3828eeb350b5e710a79936a25f29f0"
-
-"vega-datasets@github:vega/vega-datasets#gh-pages", vega-datasets@vega/vega-datasets#gh-pages:
+vega-datasets@^1.10.0, vega-datasets@vega/vega-datasets#gh-pages:
   version "1.10.0"
   resolved "https://codeload.github.com/vega/vega-datasets/tar.gz/7080ba8297825d27495bdfb8386d10cff83cbacf"
 

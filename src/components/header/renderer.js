@@ -93,7 +93,7 @@ export default class Header extends React.Component {
             gistIsOpened: true
           });
         }}>
-        {'Gist'}
+        {'Replicate'}
       </div>
     );
 
@@ -192,9 +192,6 @@ export default class Header extends React.Component {
 
     return (
         <div className='header'>
-          <a className="idl-logo" href="https://idl.cs.washington.edu/" target="_blank">
-            <img height={37} alt="IDL Logo" src="https://vega.github.io/images/idl-logo.png" />
-          </a>
           {examplesButton}
           {gistButton}
           {docsLink}

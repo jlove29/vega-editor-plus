@@ -1,9 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import ReactFileReader from 'react-file-reader';
+import Resizable from 'react-resizable-box';
 
 const tableContainer = {
-  height: 200,
+  height: '100%',
+  width: '120%',
   overflowX: 'scroll',
   overflowY: 'scroll'
 }
@@ -133,9 +135,12 @@ class DataHeader extends React.Component {
           dataShow.push(
             <div key='container'>
               <div>
-                <div id='tableContainer' style={tableContainer}>
-                  <div id='TableShow' />
-                </div>
+                  <Resizable width={320} height={200}>
+                  <div id='tableContainer' style={tableContainer}>
+                    <div id='TableShow' />
+                  </div>
+                  </Resizable>
+                  
               </div>
               <br />
               <ReactFileReader handleFiles={this.handleFiles} fileTypes={'.csv'}>
