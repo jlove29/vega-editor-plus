@@ -4,18 +4,24 @@ The **Vega editor** is a web application for authoring and testing [Vega](http:/
 
 ### Usage Instructions
 
-To run the editor locally, you must first install the dependencies and then launch a local web server. We assume you have [npm](https://www.npmjs.com/) installed.
+To run the editor locally, you must first install the dependencies and then launch a local web server. We assume you have [brew](https://brew.sh/) and [npm](https://www.npmjs.com/) installed.
 
-1. Install the dependencies:
-
-```
-$ npm install
-```
-
-2. Start the server:
+1. Install yarn:
 
 ```
-$ npm start
+$ brew install yarn
+```
+
+2. Install the dependencies:
+
+```
+$ yarn install
+```
+
+3. Start the server:
+
+```
+$ yarn start
 ```
 
 ### Local Testing & Debugging
