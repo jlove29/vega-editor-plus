@@ -1,6 +1,6 @@
 import React from 'react';
 import {MODES} from '../../../../constants';
-import MonacoEditor from 'react-monaco-editor';
+import MonacoEditor from 'react-monaco-editor-plus';
 import {hashHistory} from 'react-router';
 import parser from 'vega-schema-url-parser';
 
@@ -21,8 +21,6 @@ const schemas = {
   }
 };
 
-var fakeCall = '  "data": {"url": "user-data"},';
-
 function debounce(func, wait, immediate) {
 	let timeout;
 	return function() {
@@ -36,13 +34,14 @@ function debounce(func, wait, immediate) {
 		timeout = setTimeout(later, wait);
 		if (callNow) func.apply(context, args);
 	};
-}
+  }
+
 
 export default class Editor extends React.Component {
-
+  
   constructor(props){
     super(props);
-    this.state = {shownCall: this.props.value}
+    this.state = {shownCall: JSON.stringify(JSON.parse(this.props.value), null, '  ')};
   }
   
   static propTypes = {
@@ -51,16 +50,40 @@ export default class Editor extends React.Component {
   }
   
   handleEditorChange(spec) {
+    var editSpec = JSON.parse(this.props.value,null,'  ');
+    editSpec.data = {'url': 'userData'};
+    editSpec.description = '...';
+    try {
+      editSpec.encoding.x.field = '...';
+      editSpec.encoding.y.field = '...';
+      editSpec.encoding.size.field = '...';
+      editSpec.encoding.shape.field = '...';
+      editSpec.encoding.column.field = '...';
+      editSpec.encoding.color.field = '...';
+      editSpec.encoding.x.type = '...';
+      editSpec.encoding.y.type = '...';
+      editSpec.transform = '...';
+      editSpec.encoding.x.axis.title = '...';
+      editSpec.encoding.y.axis.title = '...';
+    } catch (TypeError) {
+      // eslint-disable-next-line     
+      true;
+    }
+    var finalSpec = JSON.stringify(editSpec,null,'  ');
+    
     if (this.props.hasData) {
+      var editSpec2 = JSON.parse(spec);
+      editSpec2.data = this.props.addData;
+      var finalSpec2 = JSON.stringify(editSpec2,null,'  ');
       if (this.props.autoParse) {
-        this.updateSpec(spec.replace(/^.*data.*$/mg, this.props.addData));
+        this.updateSpec(finalSpec2);
       } else {
-        this.props.updateEditorString(spec.replace(/^.*data.*$/mg, this.props.addData));
+        this.props.updateEditorString(finalSpec2);
       }
       if (hashHistory.getCurrentLocation().pathname.indexOf('/edited') === -1) {
         hashHistory.push('/edited');
       }
-      this.setState({shownCall: this.props.value.replace(/^.*data.*$/mg, fakeCall)});
+      this.setState({shownCall: finalSpec});
     } else {
       if (this.props.autoParse) {
         this.updateSpec(spec);

@@ -56,9 +56,7 @@ class DataHeader extends React.Component {
       var toParse = rowsColumns;
       var asObject = {};
       asObject.values = toParse; 
-      var objToString = JSON.stringify(asObject);
-      var fullCall = '"data":'+objToString+','; 
-      this.props.addData(fullCall);
+      this.props.addData(asObject);
       this.props.isData();
       var table = document.createElement('table'), tr, td, row, cell;
       for (row = 0; row < columns.length; row++) {
@@ -105,9 +103,7 @@ class DataHeader extends React.Component {
                 }  
               var asObject = {};
               asObject.values = rowsColumns; 
-              var objToString = JSON.stringify(asObject);
-              var fullCall = '"data":'+objToString+','; 
-              this.props.addData(fullCall);
+              this.props.addData(asObject);
               this.props.isData();
               }.bind(this), 
             false

@@ -1076,8 +1076,8 @@ boom@2.x.x:
     hoek "2.x.x"
 
 bowser@^1.6.0:
-  version "1.7.2"
-  resolved "https://registry.yarnpkg.com/bowser/-/bowser-1.7.2.tgz#b94cc6925ba6b5e07c421a58e601ce4611264572"
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/bowser/-/bowser-1.7.3.tgz#504bdb43118ca8db9cbbadf28fd60f265af96e4f"
 
 brace-expansion@^1.0.0, brace-expansion@^1.1.7:
   version "1.1.8"
@@ -1228,8 +1228,8 @@ caniuse-api@^1.5.2:
     lodash.uniq "^4.5.0"
 
 caniuse-db@^1.0.30000525, caniuse-db@^1.0.30000527, caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
-  version "1.0.30000718"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000718.tgz#86cdd97987302554934c61e106f4e470f16f993c"
+  version "1.0.30000721"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000721.tgz#cdc52efe8f82dd13916615b78e86f704ece61802"
 
 canvas@^1.6, canvas@^1.6.0:
   version "1.6.6"
@@ -1547,8 +1547,8 @@ core-js@^1.0.0:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
 
 core-js@^2.4.0, core-js@^2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.0.tgz#569c050918be6486b3837552028ae0466b717086"
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.1.tgz#ae6874dc66937789b80754ff5428df66819ca50b"
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
@@ -1764,8 +1764,8 @@ d3-dispatch@1:
   resolved "https://registry.yarnpkg.com/d3-dispatch/-/d3-dispatch-1.0.3.tgz#46e1491eaa9b58c358fce5be4e8bed626e7871f8"
 
 d3-dsv@1:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/d3-dsv/-/d3-dsv-1.0.5.tgz#419f7db47f628789fc3fdb636e678449d0821136"
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/d3-dsv/-/d3-dsv-1.0.7.tgz#137076663f398428fc3d031ae65370522492b78f"
   dependencies:
     commander "2"
     iconv-lite "0.4"
@@ -2072,8 +2072,8 @@ ee-first@1.1.1:
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
 electron-to-chromium@^1.2.7:
-  version "1.3.18"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.18.tgz#3dcc99da3e6b665f6abbc71c28ad51a2cd731a9c"
+  version "1.3.20"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.20.tgz#2eedd5ccbae7ddc557f68ad1fce9c172e915e4e5"
 
 emojis-list@^2.0.0:
   version "2.1.0"
@@ -2987,8 +2987,8 @@ hoist-non-react-statics@^1.2.0:
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-1.2.0.tgz#aa448cf0986d55cc40773b17174b7dd066cb7cfb"
 
 hoist-non-react-statics@^2.2.1:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.3.0.tgz#ede16318c2ff1f9fe3a025396ba06fd4c44608bb"
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.3.1.tgz#343db84c6018c650778898240135a1420ee22ce0"
 
 home-or-tmp@^2.0.0:
   version "2.0.0"
@@ -4247,8 +4247,8 @@ mute-stream@0.0.5:
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.5.tgz#8fbfabb0a98a253d3184331f9e8deb7372fac6c0"
 
 nan@^2.3.0, nan@^2.4.0:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/nan/-/nan-2.6.2.tgz#e4ff34e6c95fdfb5aecc08de6596f43605a7db45"
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/nan/-/nan-2.7.0.tgz#d95bf721ec877e08db276ed3fc6eb78f9083ad46"
 
 nanomatch@^1.2.0:
   version "1.2.0"
@@ -5416,11 +5416,10 @@ regenerator-transform@^0.10.0:
     private "^0.1.6"
 
 regex-cache@^0.4.2:
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/regex-cache/-/regex-cache-0.4.3.tgz#9b1a6c35d4d0dfcef5711ae651e8e9d3d7114145"
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/regex-cache/-/regex-cache-0.4.4.tgz#75bdc58a2a1496cec48a12835bc54c8d562336dd"
   dependencies:
     is-equal-shallow "^0.1.3"
-    is-primitive "^2.0.0"
 
 regex-not@^0.1.1:
   version "0.1.2"
@@ -6028,8 +6027,8 @@ supports-color@^3.1.0, supports-color@^3.1.1, supports-color@^3.1.2, supports-co
     has-flag "^1.0.0"
 
 supports-color@^4.0.0, supports-color@^4.2.1:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-4.2.1.tgz#65a4bb2631e90e02420dba5554c375a4754bb836"
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-4.4.0.tgz#883f7ddabc165142b2a61427f3352ded195d1a3e"
   dependencies:
     has-flag "^2.0.0"
 
@@ -6450,7 +6449,11 @@ vega-dataflow@3:
     vega-loader "2"
     vega-util "1"
 
-vega-datasets@^1.10.0, vega-datasets@vega/vega-datasets#gh-pages:
+vega-datasets@^1.10.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/vega-datasets/-/vega-datasets-1.10.0.tgz#fe923df5aa3828eeb350b5e710a79936a25f29f0"
+
+"vega-datasets@github:vega/vega-datasets#gh-pages", vega-datasets@vega/vega-datasets#gh-pages:
   version "1.10.0"
   resolved "https://codeload.github.com/vega/vega-datasets/tar.gz/7080ba8297825d27495bdfb8386d10cff83cbacf"
 
@@ -6504,8 +6507,8 @@ vega-hierarchy@2:
     vega-util "1"
 
 vega-lite@^2.0.0-beta.14:
-  version "2.0.0-beta.16"
-  resolved "https://registry.yarnpkg.com/vega-lite/-/vega-lite-2.0.0-beta.16.tgz#84e564697df6a3b471dc6295b3397d4c764db7db"
+  version "2.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/vega-lite/-/vega-lite-2.0.0-beta.19.tgz#75bfcee41f2734d928b2449d025b2a5ae00b5044"
   dependencies:
     json-stable-stringify "^1.0.1"
     tslib "^1.7.1"
