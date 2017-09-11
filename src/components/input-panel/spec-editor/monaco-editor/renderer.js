@@ -41,7 +41,7 @@ export default class Editor extends React.Component {
   
   constructor(props){
     super(props);
-    this.state = {shownCall: JSON.stringify(JSON.parse(this.props.value), null, '  ')};
+    this.state = {shownCall: JSON.stringify(JSON.parse(this.props.value), null, '  '), first:true};
   }
   
   static propTypes = {
@@ -114,44 +114,10 @@ export default class Editor extends React.Component {
     }
   }
 
-  clearFields(editSpec) {
-    try { editSpec.encoding.x.field = '...';} catch (TypeError) {
-      // eslint-disable-next-line     
-      true; }
-    try { editSpec.encoding.y.field  = '...';} catch (TypeError) {
-      // eslint-disable-next-line     
-      true; } 
-    try { editSpec.encoding.size.field = '...';} catch (TypeError) {
-      // eslint-disable-next-line     
-      true; } 
-    try { editSpec.encoding.shape.field = '...';} catch (TypeError) {
-      // eslint-disable-next-line     
-      true; } 
-    try { editSpec.encoding.column.field = '...'; } catch (TypeError) {
-      // eslint-disable-next-line     
-      true; } 
-    try { editSpec.encoding.color.field = '...';} catch (TypeError) {
-      // eslint-disable-next-line     
-      true; } 
-    try { editSpec.encoding.x.type = '...';} catch (TypeError) {
-      // eslint-disable-next-line     
-      true; } 
-    try { editSpec.encoding.y.type = '...';} catch (TypeError) {
-      // eslint-disable-next-line     
-      true; } 
-    try { editSpec.transform = '...';} catch (TypeError) {
-      // eslint-disable-next-line     
-      true; } 
-    try { editSpec.encoding.x.axis.title = '...';} catch (TypeError) {
-      // eslint-disable-next-line     
-      true; } 
-    try { editSpec.encoding.y.axis.title = '...';} catch (TypeError) {
-      // eslint-disable-next-line     
-      true; } 
-    }
-  
-  componentDidMount(spec) {
+
+  componentWillUpdate() {
     if (this.props.hasData) {
+      if (this.state.first) {
       var editSpec = JSON.parse(this.props.value,null,'  ');
       try {
         editSpec.data = {'url': 'userData'};
@@ -159,11 +125,47 @@ export default class Editor extends React.Component {
         // eslint-disable-next-line     
         true;
       }
-      var editSpec2 = this.clearFields(editSpec)
-      console.log(editSpec2)
-      var finalSpec = JSON.stringify(editSpec2,null,'  ');
+      try { editSpec.description = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; }
+      try { editSpec.encoding.x.field = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; }
+      try { editSpec.encoding.y.field  = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+      try { editSpec.encoding.size.field = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+      try { editSpec.encoding.shape.field = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+      try { editSpec.encoding.column.field = '...'; } catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+      try { editSpec.encoding.color.field = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+      try { editSpec.encoding.x.type = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+      try { editSpec.encoding.y.type = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+      try { editSpec.transform[0] = '...'} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+      try { editSpec.encoding.x.axis.title = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+      try { editSpec.encoding.y.axis.title = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+      
+      var finalSpec = JSON.stringify(editSpec,null,'  ');
       this.setState({shownCall: finalSpec});
-      this.render();
+      this.setState({first: false});
+      }
     }}
 
  

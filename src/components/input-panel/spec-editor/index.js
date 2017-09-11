@@ -42,34 +42,10 @@ class SpecEditor extends React.Component {
       ];
     return dataPanes;
     }
-    
-  forceDataPanes() {
-    const dataPanes = [
-      <Editor 
-        key='editor' 
-        ref='editor'
-        hasData={true} 
-        addData={this.state.userData} 
-        />, 
-      <DataPanel 
-        key='panel'
-        isData={this.onIsData.bind(this)}  
-        addData={this.onAddData.bind(this)} 
-        callback={this.update.bind(this)}
-        />
-    
-      ];
-    return dataPanes;
-    
-    }
      
   render() {
     var dataPanes;
-    if (this.state.hasData) {
-      dataPanes = this.forceDataPanes();
-    } else {
-      dataPanes = this.getDataPanes();
-    }
+    dataPanes = this.getDataPanes();
     let outerComponent;
     if (this.props.dataPanelShow) {
         outerComponent = React.createElement(SplitPane,
@@ -84,7 +60,6 @@ class SpecEditor extends React.Component {
         {dataPanes}
       </div>
     }
-    console.log('r')
     return outerComponent;
   }
 }
