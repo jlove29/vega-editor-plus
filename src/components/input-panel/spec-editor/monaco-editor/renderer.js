@@ -96,6 +96,41 @@ export default class Editor extends React.Component {
     }
   }
 
+  clearFields(editSpec) {
+    editSpec.description = '...';
+    editSpec.encoding.x.field = '...';
+    editSpec.encoding.y.field = '...';
+    editSpec.encoding.size.field = '...';
+    editSpec.encoding.shape.field = '...';
+    editSpec.encoding.column.field = '...';
+    editSpec.encoding.color.field = '...';
+    editSpec.encoding.x.type = '...';
+    editSpec.encoding.y.type = '...';
+    editSpec.transform = '...';
+    editSpec.encoding.x.axis.title = '...';
+    editSpec.encoding.y.axis.title = '...';
+    return editSpec;
+    }
+  
+  componentDidMount(spec) {
+    console.log(this.props.hasData);
+    console.log(0);
+    if (this.props.hasData) {
+      var editSpec = JSON.parse(this.props.value,null,'  ');
+      try {
+        editSpec.data = {'url': 'userData'};
+      } catch (TypeError) {
+        // eslint-disable-next-line     
+        true;
+      }
+      var editSpec2 = this.clearFields(editSpec)
+      console.log(editSpec2)
+      var finalSpec = JSON.stringify(editSpec2,null,'  ');
+      this.setState({shownCall: finalSpec});
+      this.render();
+    }}
+
+ 
   editorWillMount(monaco) {
     monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
       validate: true,
@@ -110,7 +145,7 @@ export default class Editor extends React.Component {
       this.props.parseSpec(false);
     }
   }
-
+  
    manualParseSpec() {
     if (!this.props.autoParse) {
       return (

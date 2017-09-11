@@ -10,7 +10,7 @@ class SpecEditor extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {userData: '', hasData: false};
+    this.state = {userData: '', hasData: false, stopper: 0};
     }
     
   onAddData(uploadedData) {
@@ -20,11 +20,16 @@ class SpecEditor extends React.Component {
   onIsData() {
     this.setState({hasData: true});
     }
+    
+  update() {
+    this.setState({hasData: true}, this.render);
+    }
      
   getDataPanes() {
     const dataPanes = [
       <Editor 
         key='editor' 
+        ref='editor'
         hasData={this.state.hasData} 
         addData={this.state.userData} 
         />, 
@@ -32,13 +37,38 @@ class SpecEditor extends React.Component {
         key='panel'
         isData={this.onIsData.bind(this)}  
         addData={this.onAddData.bind(this)} 
+        callback={this.update.bind(this)}
         />
       ];
     return dataPanes;
     }
+    
+  forceDataPanes() {
+    const dataPanes = [
+      <Editor 
+        key='editor' 
+        ref='editor'
+        hasData={true} 
+        addData={this.state.userData} 
+        />, 
+      <DataPanel 
+        key='panel'
+        isData={this.onIsData.bind(this)}  
+        addData={this.onAddData.bind(this)} 
+        callback={this.update.bind(this)}
+        />
+      ];
+    return dataPanes;
+    
+    }
      
   render() {
-    const dataPanes = this.getDataPanes();
+    var dataPanes;
+    if (this.state.hasData) {
+      dataPanes = this.forceDataPanes();
+    } else {
+      dataPanes = this.getDataPanes();
+    }
     let outerComponent;
     if (this.props.dataPanelShow) {
         outerComponent = React.createElement(SplitPane,
@@ -53,6 +83,7 @@ class SpecEditor extends React.Component {
         {dataPanes}
       </div>
     }
+    console.log('r')
     return outerComponent;
   }
 }

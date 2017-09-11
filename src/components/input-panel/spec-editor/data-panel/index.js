@@ -115,6 +115,7 @@ class DataHeader extends React.Component {
       }.bind(this)
     
     reader.readAsText(files[0]);
+    this.props.callback()
     }
     
   changePanel() {
