@@ -50,9 +50,13 @@ export default class Editor extends React.Component {
   }
   
   handleEditorChange(spec) {
-    var editSpec = JSON.parse(this.props.value,null,'  ');
-    editSpec.data = {'url': 'userData'};
-    editSpec.description = '...'; 
+
+    if (this.props.hasData) {
+      if (this.state.first) {
+    
+      var editSpec = JSON.parse(this.props.value,null,'  ');
+      editSpec.data = {'url': 'userData'};
+    
     try { editSpec.encoding.x.field = '...';} catch (TypeError) {
       // eslint-disable-next-line     
       true; }
@@ -86,22 +90,28 @@ export default class Editor extends React.Component {
     try { editSpec.encoding.y.axis.title = '...';} catch (TypeError) {
       // eslint-disable-next-line     
       true; } 
+    try { editSpec.encoding.color.type = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
     
-    var finalSpec = JSON.stringify(editSpec,null,'  ');
+      this.setState({first: false});
+      var finalSpec = JSON.stringify(editSpec,null,'  ');
+      } else {
+        var finalSpec = JSON.stringify(spec,null,'  ');
+        }
     
-    if (this.props.hasData) {
       var editSpec2 = JSON.parse(spec);
       editSpec2.data = this.props.addData;
       var finalSpec2 = JSON.stringify(editSpec2,null,'  ');
       if (this.props.autoParse) {
         this.updateSpec(finalSpec2);
-      } else {
+        } else {
         this.props.updateEditorString(finalSpec2);
-      }
+        }
       if (hashHistory.getCurrentLocation().pathname.indexOf('/edited') === -1) {
         hashHistory.push('/edited');
-      }
-      this.setState({shownCall: finalSpec});
+        }
+      this.setState({shownCall: JSON.parse(finalSpec)});
     } else {
       if (this.props.autoParse) {
         this.updateSpec(spec);
@@ -125,9 +135,6 @@ export default class Editor extends React.Component {
         // eslint-disable-next-line     
         true;
       }
-      try { editSpec.description = '...';} catch (TypeError) {
-      // eslint-disable-next-line     
-      true; }
       try { editSpec.encoding.x.field = '...';} catch (TypeError) {
       // eslint-disable-next-line     
       true; }
@@ -152,13 +159,13 @@ export default class Editor extends React.Component {
       try { editSpec.encoding.y.type = '...';} catch (TypeError) {
       // eslint-disable-next-line     
       true; } 
-      try { editSpec.transform[0] = '...'} catch (TypeError) {
-      // eslint-disable-next-line     
-      true; } 
       try { editSpec.encoding.x.axis.title = '...';} catch (TypeError) {
       // eslint-disable-next-line     
       true; } 
       try { editSpec.encoding.y.axis.title = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+      try { editSpec.encoding.color.type = '...';} catch (TypeError) {
       // eslint-disable-next-line     
       true; } 
       
