@@ -52,23 +52,41 @@ export default class Editor extends React.Component {
   handleEditorChange(spec) {
     var editSpec = JSON.parse(this.props.value,null,'  ');
     editSpec.data = {'url': 'userData'};
-    editSpec.description = '...';
-    try {
-      editSpec.encoding.x.field = '...';
-      editSpec.encoding.y.field = '...';
-      editSpec.encoding.size.field = '...';
-      editSpec.encoding.shape.field = '...';
-      editSpec.encoding.column.field = '...';
-      editSpec.encoding.color.field = '...';
-      editSpec.encoding.x.type = '...';
-      editSpec.encoding.y.type = '...';
-      editSpec.transform = '...';
-      editSpec.encoding.x.axis.title = '...';
-      editSpec.encoding.y.axis.title = '...';
-    } catch (TypeError) {
+    editSpec.description = '...'; 
+    try { editSpec.encoding.x.field = '...';} catch (TypeError) {
       // eslint-disable-next-line     
-      true;
-    }
+      true; }
+    try { editSpec.encoding.y.field  = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+    try { editSpec.encoding.size.field = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+    try { editSpec.encoding.shape.field = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+    try { editSpec.encoding.column.field = '...'; } catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+    try { editSpec.encoding.color.field = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+    try { editSpec.encoding.x.type = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+    try { editSpec.encoding.y.type = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+    try { editSpec.transform = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+    try { editSpec.encoding.x.axis.title = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+    try { editSpec.encoding.y.axis.title = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+    
     var finalSpec = JSON.stringify(editSpec,null,'  ');
     
     if (this.props.hasData) {
@@ -97,24 +115,42 @@ export default class Editor extends React.Component {
   }
 
   clearFields(editSpec) {
-    editSpec.description = '...';
-    editSpec.encoding.x.field = '...';
-    editSpec.encoding.y.field = '...';
-    editSpec.encoding.size.field = '...';
-    editSpec.encoding.shape.field = '...';
-    editSpec.encoding.column.field = '...';
-    editSpec.encoding.color.field = '...';
-    editSpec.encoding.x.type = '...';
-    editSpec.encoding.y.type = '...';
-    editSpec.transform = '...';
-    editSpec.encoding.x.axis.title = '...';
-    editSpec.encoding.y.axis.title = '...';
-    return editSpec;
+    try { editSpec.encoding.x.field = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; }
+    try { editSpec.encoding.y.field  = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+    try { editSpec.encoding.size.field = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+    try { editSpec.encoding.shape.field = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+    try { editSpec.encoding.column.field = '...'; } catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+    try { editSpec.encoding.color.field = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+    try { editSpec.encoding.x.type = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+    try { editSpec.encoding.y.type = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+    try { editSpec.transform = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+    try { editSpec.encoding.x.axis.title = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
+    try { editSpec.encoding.y.axis.title = '...';} catch (TypeError) {
+      // eslint-disable-next-line     
+      true; } 
     }
   
   componentDidMount(spec) {
-    console.log(this.props.hasData);
-    console.log(0);
     if (this.props.hasData) {
       var editSpec = JSON.parse(this.props.value,null,'  ');
       try {

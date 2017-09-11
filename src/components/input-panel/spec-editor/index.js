@@ -57,6 +57,7 @@ class SpecEditor extends React.Component {
         addData={this.onAddData.bind(this)} 
         callback={this.update.bind(this)}
         />
+    
       ];
     return dataPanes;
     
