@@ -86,16 +86,6 @@ export default class Header extends React.Component {
       </div>
     );
 
-    const gistButton = (
-      <div className='button'
-        onClick={(e) => {
-          this.setState({
-            gistIsOpened: true
-          });
-        }}>
-        {'Replicate'}
-      </div>
-    );
 
     const docsLink = (
       <a className='button right' href={this.props.mode === MODES.Vega ? 'https://vega.github.io/vega/docs/' : 'https://vega.github.io/vega-lite/docs/'} target="_blank">
@@ -170,30 +160,10 @@ export default class Header extends React.Component {
       </div>
     );
 
-    const gist = (
-      <div>
-        <header>Enter Gist URL: </header>
-        <div className='gist-content'>
-          <div className='gist-text'>For example</div>
-          <div className='gist-url'>https://gist.github.com/mathisonian/542616c4af5606784e97e59e3c65b7e5</div>
-
-          <input className='gist-input' type='text' placeholder='enter gist url here' value={this.state.url}
-          onChange={this.handleChange.bind(this)}/>
-
-          <button className='gist-button' onClick={this.onSelectVegaGist.bind(this, this.state.url)}> 
-            Vega
-          </button>
-          <button className='gist-button' onClick={this.onSelectVegaLiteGist.bind(this, this.state.url)}> 
-            Vega-Lite
-          </button>
-        </div>
-      </div>
-    );
 
     return (
         <div className='header'>
           {examplesButton}
-          {gistButton}
           {docsLink}
           {customButton}
 
@@ -248,22 +218,6 @@ export default class Header extends React.Component {
           </div>
         </Portal>
 
-        <Portal
-          closeOnEsc
-          isOpened={this.state.gistIsOpened}
-          onClose={() => { this.setState({gistIsOpened: false});}}
-        >
-        <div className='modal-background'>
-          <div className='modal-header'>
-            <button className='close-button' onClick={() => {this.setState({gistIsOpened: false});}}>✖</button>
-          </div>
-          <div className='modal-area'>
-            <div className='modal'>
-              {gist}
-            </div>
-          </div>
-        </div>
-        </Portal>
       </div>
     );
   }

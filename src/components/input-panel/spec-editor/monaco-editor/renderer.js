@@ -97,6 +97,7 @@ export default class Editor extends React.Component {
       this.setState({first: false});
       var finalSpec = JSON.stringify(editSpec,null,'  ');
       } else {
+              // eslint-disable-next-line     
         var finalSpec = JSON.stringify(spec,null,'  ');
         }
     
