@@ -8,7 +8,7 @@ const mapStateToProps = function(state, ownProps) {
     mode: state.mode,
     selectedExample: state.selectedExample,
     gist: state.gist,
-    autoParse: state.autoParse,
+    autoParse: false,
     parse: state.parse,
     userData: state.userData,
     isData: state.isData

@@ -12,7 +12,6 @@ export default class Toolbar extends React.Component {
   static propTypes = {
     error: React.PropTypes.string,
     renderer: React.PropTypes.string,
-    autoParse: React.PropTypes.bool,
     tooltip: React.PropTypes.bool
   }
 
@@ -39,11 +38,6 @@ export default class Toolbar extends React.Component {
         <div className='status'>
           {
             `${this.props.mode} version ${getVersion(this.props.mode)}`
-          }
-        </div>
-        <div className='autoParse' onClick={this.props.toggleAutoParse}>
-          {
-            this.props.autoParse ? 'Parse: auto' : 'Parse: manual'
           }
         </div>
         <div className='tooltip-toggle' onClick={this.props.showTooltip}>

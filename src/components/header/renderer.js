@@ -13,7 +13,8 @@ export default class Header extends React.Component {
     super(props);
     this.state = {
       showVega: props.mode === MODES.Vega,
-      url: ''
+      url: '',
+      //exampleIsOpened: true
     };
     this.onSelectVega = this.onSelectVega.bind(this);
   }
@@ -38,6 +39,7 @@ export default class Header extends React.Component {
       exampleIsOpened: false
     });
     hashHistory.push('/examples/vega-lite/' + name);
+    this.props.rerender();
   }
 
   onSelectNewVegaLite() {
@@ -160,7 +162,6 @@ export default class Header extends React.Component {
       </div>
     );
 
-
     return (
         <div className='header'>
           {examplesButton}
@@ -199,7 +200,7 @@ export default class Header extends React.Component {
         <Portal
           closeOnEsc
           isOpened={this.state.exampleIsOpened}
-          onClose={() => { this.setState({exampleIsOpened: false}); location.reload()}}
+          onClose={() => { this.setState({exampleIsOpened: false}); this.forceUpdate()}}
         >
           <div className='modal-background'>
             <div className='modal-header'>

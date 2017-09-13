@@ -14,6 +14,10 @@ import {MODES} from '../constants';
 
 class App extends React.Component {
 
+  componentWillMount() {
+    this.setState({first: true})
+  }
+  
   componentDidMount() {
     window.addEventListener('message', (evt) => {
       var data = evt.data;
@@ -39,6 +43,8 @@ class App extends React.Component {
 
     const parameter = this.props.params;
     this.setSpecInUrl(parameter);
+    
+    this.setState({first: false})
   }
 
   componentWillReceiveProps(nextProps) {
@@ -114,12 +120,16 @@ class App extends React.Component {
       this.props.updateVegaLiteSpec('{}');
     }
   }
-
+  
+  rerender() {
+    location.reload()
+  }
+  
   render() {
     const w = window.innerWidth;
     return (
       <div className="app-container">
-        <Header />
+        <Header first={this.state.first} rerender={this.rerender.bind(this)}/>
         <div style={{position: 'relative', height: `calc(100vh - ${LAYOUT.HeaderHeight}px)`}}>
           <SplitPane split="vertical" minSize={300} defaultSize={w * 0.4} pane1Style={{display: 'flex'}} className='main-pane' pane2Style={{overflow: 'scroll'}}>
             <InputPanel />
