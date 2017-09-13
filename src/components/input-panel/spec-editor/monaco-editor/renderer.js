@@ -117,6 +117,7 @@ export default class Editor extends React.Component {
         this.updateSpec(finalSpec2);
         } else {
         this.props.updateEditorString(finalSpec2);
+        this.setState({shownCall: finalSpec2})
         }
       if (hashHistory.getCurrentLocation().pathname.indexOf('/edited') === -1) {
         hashHistory.push('/edited');
@@ -127,6 +128,7 @@ export default class Editor extends React.Component {
         this.updateSpec(spec);
       } else {
         this.props.updateEditorString(spec);
+        this.setState({shownCall: spec})
       }
       if (hashHistory.getCurrentLocation().pathname.indexOf('/edited') === -1) {
         hashHistory.push('/edited');
