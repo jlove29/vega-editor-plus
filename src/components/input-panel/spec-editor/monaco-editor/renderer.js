@@ -21,6 +21,9 @@ const schemas = {
   }
 };
 
+const red = {backgroundColor: '#cc5d5d'}
+const clear = {}
+
 function debounce(func, wait, immediate) {
 	let timeout;
 	return function() {
@@ -49,8 +52,14 @@ export default class Editor extends React.Component {
     onChange: React.PropTypes.func
   }
   
+  callback() {
+      this.props.parseSpec(true)
+      this.setState({isEdited: false})
+    }
+  
   handleEditorChange(spec) {
-
+  
+  
     if (this.props.hasData) {
       if (this.state.first) {
     
@@ -123,6 +132,9 @@ export default class Editor extends React.Component {
         hashHistory.push('/edited');
       }
     }
+  
+  this.setState({isEdited: true})
+  
   }
 
 
@@ -193,13 +205,30 @@ export default class Editor extends React.Component {
   }
   
    manualParseSpec() {
+    
     if (!this.props.autoParse) {
+      
+      if (this.state.isEdited) {
+      
       return (
-        <div className="editor-header"> 
+        <div className="editor-header" style={red}> 
+          <button id='parse-button' onClick={this.callback.bind(this)}>Parse</button>
+        </div>
+      )
+      
+      }  else {
+      
+      return (
+        <div className="editor-header" style={clear}> 
           <button id='parse-button' onClick={() => this.props.parseSpec(true)}>Parse</button>
         </div>
       )
-    } else {
+      
+      }
+    
+    }
+    
+    else {
       return null;
     }
   }
