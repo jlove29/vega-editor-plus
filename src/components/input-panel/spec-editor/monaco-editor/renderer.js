@@ -182,7 +182,9 @@ export default class Editor extends React.Component {
       true; } 
       try { editSpec.encoding.color.type = '...';} catch (TypeError) {
       // eslint-disable-next-line     
-      true; } 
+      true; 
+      this.setState({isEdited: true})
+      } 
       
       var finalSpec = JSON.stringify(editSpec,null,'  ');
       this.setState({shownCall: finalSpec});
