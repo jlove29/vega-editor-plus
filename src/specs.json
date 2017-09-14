@@ -1,0 +1,1987 @@
+{"line_color":
+	{"encoding":
+		{"y":
+			{"field": "Miles_per_Gallon", 
+			"scale": {"domain": [20, 40]}, "type": "quantitative"}, 
+		"x":
+			{"field": "Horsepower", 
+			"scale": {"domain": [75, 150]}, "type": "quantitative"}, 
+		"color": 
+			{"value": "grey", 
+			"condition": {"field": "Origin", "selection": "brush", "type": "nominal"}}, 
+	    "size":
+			{"field": "Cylinders", "type": "quantitative"}}, 
+	"$schema": "https://vega.github.io/schema/vega-lite/v2.json", 
+	"selection":
+		{"brush": {"type": "interval"}}, 
+		"data": {"url": "data/cars.json"}, 
+		"mark": {"type": "circle", "clip": true}}, 
+	
+"point_1d":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"column":
+	{"field": "Origin", "type": "ordinal"}, "color":
+	{"field": "Cylinders", "type": "nominal"}, "shape":
+	{"field": "Origin", "type": "nominal"}, "y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "row":
+	{"field": "Cylinders", "type": "ordinal"}}, "data":
+	{"url": "data/cars.json"}, "mark": "point"}, 
+
+"stacked_area_stream":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "mean", "field": "price", "type": "quantitative"}, "x":
+	{"field": "date", "type": "temporal", "timeUnit": "year"}, "color":
+	{"field": "date", "type": "temporal", "timeUnit": "quarter"}}, "data":
+	{"url": "data/stocks.csv"}, "description": "Stock price average broken down by quarter.", "mark": "line"}, 
+
+"selection_insert":
+	{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "color":
+	{"value": "grey", "condition":
+	{"field": "Cylinders", "selection": "paintbrush", "type": "ordinal"}}, "size":
+	{"value": 75}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"paintbrush":
+	{"toggle": false, "type": "multi"}}, "data":
+	{"url": "data/cars.json"}, "mark": "circle"}, "bar_aggregate":
+	{"description": "A bar chart showing the US population distribution of age groups in 2000.", "encoding":
+	{"y":
+	{"field": "age", "scale":
+	{"rangeStep": 17}, "type": "ordinal"}, "x":
+	{"aggregate": "sum", "field": "people", "type": "quantitative", "axis":
+	{"title": "population"}}}, "transform": [{"filter": "datum.year == 2000"}], "mark": "bar", "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/population.json"}}, "selection_project_binned_interval":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/cars.json"}, "layer": [{"encoding":
+	{"y":
+	{"aggregate": "count", "field": "*", "type": "quantitative"}, "x":
+	{"bin": true, "field": "Acceleration", "type": "quantitative"}}, "selection":
+	{"brush":
+	{"type": "interval", "encodings": ["x"]}}, "mark": "bar"}, {"encoding":
+	{"y":
+	{"aggregate": "count", "field": "*", "type": "quantitative"}, "x":
+	{"bin": true, "field": "Acceleration", "type": "quantitative"}, "color":
+	{"value": "goldenrod"}}, "transform": [{"filter":
+	{"selection": "brush"}}], "mark": "bar"}]}, "overlay_area_short":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "sum", "field": "yield", "type": "quantitative"}, "x":
+	{"field": "variety", "type": "nominal"}, "color":
+	{"field": "site", "type": "nominal"}}, "data":
+	{"url": "data/barley.json"}, "mark": "bar"}, "box-plot_minmax_2D_vertical":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "people", "type": "quantitative", "axis":
+	{"title": "population"}}, "x":
+	{"field": "age", "type": "ordinal"}, "size":
+	{"value": 5}}, "data":
+	{"url": "data/population.json"}, "description": "A vertical 2D box plot showing median, min, and max in the US population distribution of age groups in 2000.", "mark": "box-plot"}, "selection_toggle_shiftKey":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/stocks.csv"}, "layer": [{"encoding":
+	{"y":
+	{"field": "price", "type": "quantitative"}, "x":
+	{"field": "date", "type": "temporal"}, "color":
+	{"field": "symbol", "type": "nominal"}}, "mark": "line"}]}, "ll.json":
+	{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "shape":
+	{"value": "circle", "condition":
+	{"field": "Origin", "selection": "pts", "type": "nominal", "scale":
+	{"range": ["triangle-left", "triangle-right", "triangle-up"]}}}, "color":
+	{"value": "grey", "condition":
+	{"field": "Cylinders", "selection": "pts", "type": "ordinal", "scale":
+	{"scheme": "yelloworangebrown"}}}, "size":
+	{"value": 50, "condition":
+	{"selection": "pts", "value": 200}}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"pts":
+	{"fields": ["Cylinders", "Origin"], "type": "multi"}}, "data":
+	{"url": "data/cars.json"}, "mark": "point"}, "output_utc_timeunit":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "count", "type": "quantitative"}, "x":
+	{"field": "date", "type": "temporal", "timeUnit": "month"}, "opacity":
+	{"value": 0.5}, "size":
+	{"field": "weather", "type": "nominal"}}, "data":
+	{"url": "data/seattle-weather.csv"}, "mark": "bar"}, "repeat_independent_colors":
+	{"resolve":
+	{"color":
+	{"scale": "independent"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "repeat":
+	{"column": ["Origin", "Cylinders"]}, "spec":
+	{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "color":
+	{"field":
+	{"repeat": "column"}, "type": "nominal"}}, "data":
+	{"url": "data/cars.json"}, "mark": "point"}}, "line_calculate":
+	{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "scale":
+	{"domain": [20, 40]}, "type": "quantitative"}, "x":
+	{"field": "Horsepower", "scale":
+	{"domain": [75, 150]}, "type": "quantitative"}, "color":
+	{"value": "grey", "condition":
+	{"field": "Origin", "selection": "brush", "type": "nominal"}}, "size":
+	{"field": "Cylinders", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"brush":
+	{"type": "interval", "zoom": "wheel![event.shiftKey]"}}, "data":
+	{"url": "data/cars.json"}, "mark":
+	{"type": "circle", "clip": true}}, "stacked_bar_weather":
+	{"description": "Google's stock price over time.", "encoding":
+	{"y":
+	{"field": "price", "type": "quantitative"}, "x":
+	{"field": "date", "type": "temporal"}}, "config":
+	{"overlay":
+	{"line": true}}, "transform": [{"filter": "datum.symbol==='GOOG'"}], "mark": "line", "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/stocks.csv"}}, "stacked_bar_h":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "mean", "field": "age", "type": "quantitative"}, "x":
+	{"field": "group", "type": "ordinal"}}, "data":
+	{"url": "data/lookup_groups.csv"}, "transform": [{"from":
+	{"fields": ["age", "height"], "data":
+	{"url": "data/lookup_people.csv"}, "key": "name"}, "lookup": "person"}], "mark": "bar"}, "point_colorramp_size":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "Acceleration", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "color":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "size":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}}, "data":
+	{"url": "data/cars.json"}, "mark": "point"}, "line_quarter":
+	{"encoding":
+	{"y":
+	{"aggregate": "sum", "field": "count", "type": "quantitative", "stack": "center", "axis": null}, "x":
+	{"timeUnit": "yearmonth", "axis":
+	{"domain": false, "tickSize": 0, "labelAngle": 0, "format": "%Y"}, "scale":
+	{"nice": "month"}, "type": "temporal", "field": "date"}, "color":
+	{"field": "series", "scale":
+	{"scheme": "category20b"}, "type": "nominal"}}, "mark": "area", "width": 300, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "height": 200, "data":
+	{"url": "data/unemployment-across-industries.json"}}, "bar_aggregate_count":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "count", "field": "*", "type": "quantitative"}, "x":
+	{"bin": true, "field": "precipitation", "type": "quantitative"}}, "data":
+	{"url": "data/seattle-weather.csv"}, "mark": "bar"}, "point_2d_aggregate":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"column":
+	{"field": "year", "type": "ordinal"}, "x":
+	{"aggregate": "sum", "field": "yield", "type": "quantitative"}, "y":
+	{"field": "variety", "type": "nominal"}, "color":
+	{"field": "site", "type": "nominal"}}, "data":
+	{"url": "data/barley.json"}, "mark": "bar"}, "selection_filter_composition":
+	{"vconcat": [{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}}, "selection":
+	{"brush":
+	{"type": "interval"}}, "mark": "point"}, {"encoding":
+	{"y":
+	{"field": "Displacement", "scale":
+	{"domain": [0, 500]}, "type": "quantitative"}, "x":
+	{"field": "Acceleration", "scale":
+	{"domain": [0, 25]}, "type": "quantitative"}}, "transform": [{"filter":
+	{"and": ["datum.Weight_in_lbs > 3000", {"selection": "brush"}]}}], "mark": "point"}], "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/cars.json"}}, "trellis_scatter_binned_row":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "average", "field": "b", "type": "quantitative"}, "x":
+	{"field": "a", "type": "nominal"}}, "data":
+	{"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "point"}, "circle":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}}, "data":
+	{"url": "data/cars.json"}, "mark": "circle"}, "layer_bar_line_union":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "repeat":
+	{"column": ["Horsepower", "Acceleration", "Miles_per_Gallon"], "row": ["Horsepower", "Acceleration", "Miles_per_Gallon"]}, "data":
+	{"url": "data/cars.json"}, "spec":
+	{"encoding":
+	{"y":
+	{"field":
+	{"repeat": "column"}, "type": "quantitative"}, "x":
+	{"field":
+	{"repeat": "row"}, "type": "quantitative"}, "color":
+	{"value": "grey", "condition":
+	{"field": "Origin", "selection": "brush", "type": "nominal"}}}, "selection":
+	{"brush":
+	{"resolve": "global", "type": "interval"}}, "mark": "point"}}, "bar_swap_axes":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "a", "type": "nominal"}, "x":
+	{"aggregate": "average", "field": "b", "type": "quantitative"}}, "data":
+	{"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "bar"}, "repeat_splom_cars":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "repeat":
+	{"column": ["Horsepower", "Miles_per_Gallon"], "row": ["Displacement", "Miles_per_Gallon"]}, "data":
+	{"url": "data/cars.json"}, "spec":
+	{"encoding":
+	{"y":
+	{"field":
+	{"repeat": "row"}, "type": "quantitative"}, "x":
+	{"field":
+	{"repeat": "column"}, "type": "quantitative"}, "color":
+	{"field": "Origin", "type": "nominal"}}, "mark": "point"}}, "output_utc_scale":
+	{"description": "A bar chart showing the US population distribution of age groups and gender in 2000.", "encoding":
+	{"y":
+	{"aggregate": "sum", "field": "people", "type": "quantitative", "axis":
+	{"title": "population"}}, "x":
+	{"field": "age", "scale":
+	{"rangeStep": 17}, "type": "ordinal"}, "color":
+	{"field": "gender", "scale":
+	{"range": ["#EA98D2", "#659CCA"]}, "type": "nominal"}}, "transform": [{"filter": "datum.year == 2000"}, {"as": "gender", "calculate": "datum.sex == 2 ? 'Female' : 'Male'"}], "mark": "bar", "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/population.json"}}, "scatter_aggregate_detail":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "mean", "field": "Displacement", "type": "quantitative"}, "x":
+	{"aggregate": "mean", "field": "Horsepower", "type": "quantitative"}, "detail":
+	{"field": "Origin", "type": "nominal"}}, "data":
+	{"url": "data/cars.json"}, "description": "A scatterplot showing average horsepower and displacement for cars from different origins.", "mark": "point"}, "trellis_barley":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"timeUnit": "hours", "axis":
+	{"title": "time"}, "type": "temporal", "field": "date"}}, "data":
+	{"values": [{"date": "10 Oct 2011 22:48:00"}, {"date": "11 Oct 2022 23:00:00"}], "format":
+	{"parse":
+	{"date": "utc:'%d %b %Y %H:%M:%S'"}}}, "description": "Google's stock price over time.", "mark": "point"}, "selection_zoom_brush_shift-wheel":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "price", "type": "quantitative"}, "x":
+	{"field": "date", "type": "temporal", "axis":
+	{"format": "%Y"}}, "color":
+	{"field": "symbol", "type": "nominal"}}, "data":
+	{"url": "data/stocks.csv"}, "description": "Stock prices of 5 Tech Companies over Time.", "mark": "line"}, "overlay_area_full":
+	{"description": "A bar chart showing the US population distribution of age groups and gender in 2000.", "encoding":
+	{"y":
+	{"aggregate": "sum", "field": "people", "type": "quantitative", "axis":
+	{"title": "population"}}, "x":
+	{"field": "age", "scale":
+	{"rangeStep": 17}, "type": "ordinal"}, "opacity":
+	{"field": "people", "type": "quantitative"}}, "transform": [{"filter": "datum.year == 2000"}, {"as": "gender", "calculate": "datum.sex == 2 ? 'Female' : 'Male'"}], "mark": "bar", "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/population.json"}}, "scatter_color_custom":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "color":
+	{"field": "Origin", "scale":
+	{"range": ["purple", "#ff0000", "teal"]}, "type": "nominal"}}, "data":
+	{"url": "data/cars.json"}, "mark": "point"}, "selection_bind_origin":
+	{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "color":
+	{"value": "grey", "condition":
+	{"field": "Cylinders", "selection": "org", "type": "ordinal"}}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"org":
+	{"fields": ["Origin"], "type": "single", "bind":
+	{"input": "select", "options": ["Europe", "Japan", "USA"]}}}, "data":
+	{"url": "data/cars.json"}, "mark": "point"}, "parse_local_time":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "count", "type": "quantitative"}, "x":
+	{"bin":
+	{"maxbins": 15}, "field": "Horsepower", "type": "quantitative"}, "row":
+	{"field": "Origin", "type": "nominal"}}, "data":
+	{"url": "data/cars.json"}, "mark": "bar"}, "line_detail":
+	{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "scale":
+	{"domain": [20, 40]}, "type": "quantitative"}, "x":
+	{"field": "Horsepower", "scale":
+	{"domain": [75, 150]}, "type": "quantitative"}, "size":
+	{"field": "Cylinders", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"grid":
+	{"bind": "scales", "type": "interval"}}, "data":
+	{"url": "data/cars.json"}, "mark": "circle"}, "stocks_nearest_index":
+	{"vconcat": [{"width": 480, "encoding":
+	{"y":
+	{"field": "price", "type": "quantitative"}, "x":
+	{"field": "date", "scale":
+	{"domain":
+	{"selection": "brush"}}, "type": "temporal", "axis":
+	{"labelAngle": 0, "title": ""}}}, "mark": "area"}, {"selection":
+	{"brush":
+	{"type": "interval", "encodings": ["x"]}}, "width": 480, "mark": "area", "encoding":
+	{"y":
+	{"field": "price", "type": "quantitative", "axis":
+	{"grid": false, "tickCount": 3}}, "x":
+	{"field": "date", "type": "temporal", "axis":
+	{"labelAngle": 0, "format": "%Y"}}}, "height": 60}], "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/sp500.csv"}}, "paintbrush_simple":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "Cylinders", "type": "ordinal"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}}, "data":
+	{"url": "data/cars.json"}, "description": "Shows the relationship between horsepower and the numbver of cylinders using tick marks.", "mark": "tick"}, "overlay_line_short":
+	{"layer": [{"encoding":
+	{"y":
+	{"field": "price", "type": "quantitative"}, "x":
+	{"field": "date", "type": "temporal", "axis": null}, "color":
+	{"field": "symbol", "type": "nominal"}}, "selection":
+	{"index":
+	{"nearest": true, "on": "mousemove", "type": "single", "encodings": ["x"]}}, "mark": "line"}, {"encoding":
+	{"x":
+	{"field": "date", "type": "temporal", "axis": null}}, "transform": [{"filter":
+	{"and": ["index.date", {"selection": "index"}]}}], "mark": "rule"}, {"encoding":
+	{"y":
+	{"value": 10}, "x":
+	{"field": "date", "type": "temporal", "axis": null}, "text":
+	{"field": "date", "type": "temporal"}}, "transform": [{"filter":
+	{"and": ["index.date", {"selection": "index"}]}}], "mark": "text"}], "data":
+	{"url": "data/stocks.csv"}, "height": 300, "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "config":
+	{"text":
+	{"align": "right", "dx": -5, "dy": 5}}}, "line_monotone":
+	{"encoding":
+	{"y":
+	{"aggregate": "sum", "field": "count", "type": "quantitative", "stack": "normalize", "axis": null}, "x":
+	{"timeUnit": "yearmonth", "axis":
+	{"domain": false, "labelAngle": 0, "format": "%Y"}, "scale":
+	{"nice": "month"}, "type": "temporal", "field": "date"}, "color":
+	{"field": "series", "scale":
+	{"scheme": "category20b"}, "type": "nominal"}}, "mark": "area", "width": 300, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "height": 200, "data":
+	{"url": "data/unemployment-across-industries.json"}}, "trellis_bar_histogram":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "mean", "field": "Horsepower", "type": "quantitative"}, "x":
+	{"field": "Year", "type": "temporal", "timeUnit": "year"}, "text":
+	{"field": "Year", "type": "temporal", "timeUnit": "year"}}, "data":
+	{"url": "data/cars.json"}, "description": "Line chart of Horsepower over time", "mark": "text"}, "stacked_area_binned":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "price", "type": "quantitative"}, "x":
+	{"field": "date", "type": "temporal"}}, "data":
+	{"url": "data/stocks.csv"}, "transform": [{"filter": "datum.symbol==='GOOG'"}], "mark":
+	{"type": "line", "interpolate": "monotone"}}, "bar_yearmonth":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "mean", "field": "temp", "type": "quantitative"}, "x":
+	{"timeUnit": "yearmonth", "axis":
+	{"format": "%B of %Y"}, "type": "temporal", "field": "date"}}, "data":
+	{"url": "data/seattle-temps.csv", "format":
+	{"type": "csv"}}, "description": "Temperature in Seattle as a bar chart with yearmonth time unit.", "mark": "bar"}, "selection_translate_brush_shift-drag":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/stocks.csv"}, "description": "Stock price over time with color legend orient = left.", "layer": [{"encoding":
+	{"y":
+	{"field": "price", "type": "quantitative"}, "x":
+	{"field": "date", "type": "temporal"}, "color":
+	{"field": "symbol", "type": "nominal"}}, "mark": "line"}, {"encoding":
+	{"y":
+	{"field": "price", "type": "quantitative"}, "x":
+	{"field": "date", "type": "temporal"}, "color":
+	{"field": "symbol", "type": "nominal", "legend":
+	{"orient": "left"}}}, "mark":
+	{"type": "point", "filled": true}}]}, "facet_row_facet_row_point":
+	{"facet":
+	{"row":
+	{"field": "Origin", "type": "ordinal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/cars.json"}, "spec":
+	{"facet":
+	{"row":
+	{"field": "Cylinders", "type": "ordinal"}}, "spec":
+	{"encoding":
+	{"y":
+	{"field": "Acceleration", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}}, "mark": "point"}}}, "bar":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "b", "type": "quantitative"}, "x":
+	{"field": "a", "type": "ordinal"}}, "data":
+	{"values": [{"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43}, {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53}, {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}]}, "description": "A simple bar chart with embedded data.", "mark": "bar"}, "layer_bar_line":
+	{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "shape":
+	{"value": "circle", "condition":
+	{"field": "Origin", "selection": "pts", "type": "nominal", "scale":
+	{"range": ["triangle-left", "triangle-right", "triangle-up"]}}}, "color":
+	{"value": "grey", "condition":
+	{"field": "Cylinders", "selection": "pts", "type": "ordinal", "scale":
+	{"scheme": "yelloworangebrown"}}}, "size":
+	{"value": 50, "condition":
+	{"selection": "pts", "value": 200}}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"pts":
+	{"fields": ["Origin"], "type": "single"}}, "data":
+	{"url": "data/cars.json"}, "mark": "point"}, "layer_bar_dual_axis_minmax":
+	{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "shape":
+	{"value": "circle", "condition":
+	{"field": "Origin", "selection": "pts", "type": "nominal", "scale":
+	{"range": ["triangle-left", "triangle-right", "triangle-up"]}}}, "color":
+	{"value": "grey", "condition":
+	{"field": "Cylinders", "selection": "pts", "type": "ordinal", "scale":
+	{"scheme": "yelloworangebrown"}}}, "size":
+	{"value": 50, "condition":
+	{"selection": "pts", "value": 200}}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"pts":
+	{"fields": ["Cylinders", "Origin"], "type": "single"}}, "data":
+	{"url": "data/cars.json"}, "mark": "point"}, "layer_box_plot_circle":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "repeat":
+	{"column": ["Horsepower", "Acceleration", "Miles_per_Gallon"], "row": ["Horsepower", "Acceleration", "Miles_per_Gallon"]}, "data":
+	{"url": "data/cars.json"}, "spec":
+	{"encoding":
+	{"y":
+	{"field":
+	{"repeat": "column"}, "type": "quantitative"}, "x":
+	{"field":
+	{"repeat": "row"}, "type": "quantitative"}, "color":
+	{"value": "grey", "condition":
+	{"field": "Origin", "selection": "brush", "type": "nominal"}}}, "selection":
+	{"brush":
+	{"resolve": "intersect_others", "type": "interval"}}, "mark": "point"}}, "bar_filter_calc":
+	{"description": "A simple bar chart with embedded data that uses a filter and calculate.", "encoding":
+	{"y":
+	{"field": "b2", "type": "quantitative"}, "x":
+	{"field": "a", "type": "ordinal"}}, "transform": [{"as": "b2", "calculate": "2*datum.b"}, {"filter": "datum.b2 > 60"}], "mark": "bar", "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"values": [{"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43}, {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}, {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53}]}}, "selection_toggle_altKey_shiftKey":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/seattle-weather.csv"}, "layer": [{"encoding":
+	{"y":
+	{"aggregate": "mean", "field": "precipitation", "type": "quantitative"}, "x":
+	{"field": "date", "type": "temporal", "timeUnit": "month"}}, "mark": "bar"}, {"encoding":
+	{"y":
+	{"aggregate": "mean", "field": "precipitation", "type": "quantitative"}, "color":
+	{"value": "red"}, "size":
+	{"value": 3}}, "mark": "rule"}]}, "selection_project_multi_origin":
+	{"encoding":
+	{"y":
+	{"field": "Origin", "type": "ordinal"}, "x":
+	{"field": "Cylinders", "type": "ordinal"}, "color":
+	{"aggregate": "count", "field": "*", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"alex":
+	{"on": "[mousedown[!event.shiftKey], mouseup] > mousemove", "type": "interval"}, "morgan":
+	{"on": "[mousedown[event.shiftKey], mouseup] > mousemove", "type": "interval", "mark":
+	{"stroke": "#e34a33", "fillOpacity": 0.5, "fill": "#fdbb84"}}}, "data":
+	{"url": "data/cars.json"}, "mark": "rect"}, "selection_resolution_intersect_others":
+	{"layer": [{"encoding":
+	{"y":
+	{"aggregate": "mean", "field": "mid", "scale":
+	{"zero": false}, "type": "quantitative", "axis":
+	{"title": ""}}, "color":
+	{"value": "fff"}}, "mark": "rule"}, {"encoding":
+	{"y":
+	{"field": "low", "type": "quantitative"}, "x":
+	{"field": "date", "axis":
+	{"title": "Date in 2009", "labelAngle": 0, "format": "%m/%d"}, "scale":
+	{"domain": [{"date": 31, "year": 2009, "month": 5}, {"date": 1, "year": 2009, "month": 7}]}, "type": "temporal", "timeUnit": "yearmonthdate"}, "y2":
+	{"field": "high", "type": "quantitative"}, "color":
+	{"field": "isIncrease", "scale":
+	{"range": ["#ae1325", "#06982d"]}, "type": "nominal", "legend": null}}, "mark": "rule"}, {"encoding":
+	{"y":
+	{"field": "open", "type": "quantitative"}, "x":
+	{"field": "date", "type": "temporal", "timeUnit": "yearmonthdate"}, "y2":
+	{"field": "close", "type": "quantitative"}, "color":
+	{"field": "isIncrease", "scale":
+	{"range": ["#ae1325", "#06982d"]}, "type": "nominal", "legend": null}, "size":
+	{"value": 5}}, "mark": "bar"}], "description": "A candlestick chart inspired from Protovis(http://mbostock.github.io/protovis/ex/candlestick.html)", "transform": [{"as": "isIncrease", "calculate": "datum.open > datum.close"}, {"as": "mid", "calculate": "(datum.open + datum.close)/2"}], "width": 320, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"values": [{"signal": "short", "ret": -4.89396411092985, "high": 30.05, "low": 28.45, "date": "01-Jun-2009", "close": 30.04, "open": 28.7}, {"signal": "short", "ret": -0.322580645161295, "high": 30.13, "low": 28.3, "date": "02-Jun-2009", "close": 29.63, "open": 30.04}, {"signal": "short", "ret": 3.68663594470045, "high": 31.79, "low": 29.62, "date": "03-Jun-2009", "close": 31.02, "open": 29.62}, {"signal": "short", "ret": 4.51010886469673, "high": 31.02, "low": 29.92, "date": "04-Jun-2009", "close": 30.18, "open": 31.02}, {"signal": "short", "ret": 6.08424336973478, "high": 30.81, "low": 28.85, "date": "05-Jun-2009", "close": 29.62, "open": 29.39}, {"signal": "short", "ret": 1.2539184952978, "high": 31.82, "low": 26.41, "date": "08-Jun-2009", "close": 29.77, "open": 30.84}, {"signal": "short", "ret": -5.02431118314424, "high": 29.77, "low": 27.79, "date": "09-Jun-2009", "close": 28.27, "open": 29.77}, {"signal": "short", "ret": -5.46623794212217, "high": 29.74, "low": 26.9, "date": "10-Jun-2009", "close": 28.46, "open": 26.9}, {"signal": "short", "ret": -8.3743842364532, "high": 28.11, "low": 26.81, "date": "11-Jun-2009", "close": 28.11, "open": 27.36}, {"signal": "short", "ret": -5.52763819095477, "high": 28.5, "low": 27.73, "date": "12-Jun-2009", "close": 28.15, "open": 28.08}, {"signal": "long", "ret": 3.4920634920635, "high": 31.09, "low": 29.64, "date": "15-Jun-2009", "close": 30.81, "open": 29.7}, {"signal": "short", "ret": 0.155038759689914, "high": 32.75, "low": 30.07, "date": "16-Jun-2009", "close": 32.68, "open": 30.81}, {"signal": "short", "ret": 5.82822085889571, "high": 32.77, "low": 30.64, "date": "17-Jun-2009", "close": 31.54, "open": 31.19}, {"signal": "short", "ret": 8.17610062893082, "high": 31.54, "low": 29.6, "date": "18-Jun-2009", "close": 30.03, "open": 31.54}, {"signal": "short", "ret": 8.59872611464968, "high": 29.32, "low": 27.56, "date": "19-Jun-2009", "close": 27.99, "open": 29.16}, {"signal": "short", "ret": 15.4907975460123, "high": 32.05, "low": 30.3, "date": "22-Jun-2009", "close": 31.17, "open": 30.4}, {"signal": "short", "ret": 11.7370892018779, "high": 31.54, "low": 27.83, "date": "23-Jun-2009", "close": 30.58, "open": 31.3}, {"signal": "long", "ret": -10.4234527687296, "high": 30.58, "low": 28.79, "date": "24-Jun-2009", "close": 29.05, "open": 30.58}, {"signal": "long", "ret": 0, "high": 29.56, "low": 26.3, "date": "25-Jun-2009", "close": 26.36, "open": 29.45}, {"signal": "long", "ret": 0, "high": 27.22, "low": 25.76, "date": "26-Jun-2009", "close": 25.93, "open": 27.09}, {"signal": "long", "ret": 5.26315789473684, "high": 27.18, "low": 25.29, "date": "29-Jun-2009", "close": 25.35, "open": 25.93}, {"signal": "long", "ret": 6.73758865248228, "high": 27.38, "low": 25.02, "date": "30-Jun-2009", "close": 26.35, "open": 25.36}]}}, "selection_project_multi":
+	{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "color":
+	{"value": "grey", "condition":
+	{"field": "Cylinders", "selection": "pts", "type": "ordinal", "scale":
+	{"scheme": "yelloworangebrown"}}}, "size":
+	{"value": 50, "condition":
+	{"selection": "pts", "value": 200}}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"pts":
+	{"type": "multi"}}, "data":
+	{"url": "data/cars.json"}, "mark": "point"}, "stacked_bar_v":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/stocks.csv"}, "transform": [{"filter": "datum.symbol==='GOOG'"}], "layer": [{"encoding":
+	{"y":
+	{"field": "price", "type": "quantitative"}, "x":
+	{"field": "date", "type": "temporal"}}, "description": "Google's stock price over time.", "mark": "line"}, {"encoding":
+	{"y":
+	{"field": "price", "type": "quantitative"}, "x":
+	{"field": "date", "type": "temporal"}}, "description": "Google's stock price over time.", "mark":
+	{"type": "point", "filled": true}}]}, "point_1d_bin":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "row":
+	{"bin": true, "field": "Acceleration", "type": "quantitative"}}, "data":
+	{"url": "data/cars.json"}, "description": "A trellis scatterplot showing Horsepower and Miles per gallons, faceted by binned values of Acceleration.", "mark": "point"}, "panzoom_vconcat_shared":
+	{"description": "A trellis bar chart showing the US population distribution of age groups and gender in 2000.", "encoding":
+	{"y":
+	{"aggregate": "sum", "field": "people", "type": "quantitative", "axis":
+	{"title": "population"}}, "x":
+	{"field": "age", "scale":
+	{"rangeStep": 17}, "type": "ordinal"}, "color":
+	{"field": "gender", "scale":
+	{"range": ["#EA98D2", "#659CCA"]}, "type": "nominal"}, "row":
+	{"field": "gender", "type": "nominal"}}, "transform": [{"filter": "datum.year == 2000"}, {"as": "gender", "calculate": "datum.sex == 2 ? 'Female' : 'Male'"}], "mark": "bar", "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/population.json"}}, "brush":
+	{"selection":
+	{"brush":
+	{"type": "interval"}}, "description": "Drag out a rectangular brush to highlight points.", "encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "color":
+	{"value": "grey", "condition":
+	{"field": "Cylinders", "selection": "brush", "type": "ordinal"}}}, "mark": "point", "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/cars.json"}}, "selection_type_single_dblclick":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "mean", "field": "temp_range", "type": "quantitative"}, "x":
+	{"timeUnit": "month", "type": "temporal", "field": "date"}}, "data":
+	{"url": "data/seattle-weather.csv"}, "transform": [{"as": "temp_range", "calculate": "datum.temp_max - datum.temp_min"}], "mark": "line"}, "scatter_binned_size":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "size":
+	{"bin": true, "field": "Acceleration", "type": "quantitative"}}, "data":
+	{"url": "data/cars.json"}, "description": "A scatterplot showing horsepower and miles per gallons with binned acceleration on size.", "mark": "point"}, "selection_zoom_brush_wheel":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "mean", "field": "Horsepower", "type": "quantitative"}, "x":
+	{"field": "Year", "type": "temporal"}, "color":
+	{"bin": true, "field": "Acceleration", "type": "quantitative"}}, "data":
+	{"url": "data/cars.json"}, "description": "A scatterplot showing horsepower and miles per gallons for various cars.", "mark": "line"}, "layer_text_heatmap":
+	{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "scale":
+	{"domain": [20, 40]}, "type": "quantitative"}, "x":
+	{"field": "Horsepower", "scale":
+	{"domain": [75, 150]}, "type": "quantitative"}, "color":
+	{"value": "grey", "condition":
+	{"field": "Origin", "selection": "brush", "type": "nominal"}}, "size":
+	{"field": "Cylinders", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"brush":
+	{"translate": "[mousedown[event.shiftKey], window:mouseup] > window:mousemove!", "type": "interval"}}, "data":
+	{"url": "data/cars.json"}, "mark":
+	{"type": "circle", "clip": true}}, "bubble_health_income":
+	{"selection":
+	{"view":
+	{"bind": "scales", "type": "interval"}}, "description": "A bubble plot showing the correlation between health and income for 187 countries in the world (modified from an example in Lisa Charlotte Rost's blog post 'One Chart, Twelve Charting Libraries' --http://lisacharlotterost.github.io/2016/05/17/one-chart-code/).", "encoding":
+	{"y":
+	{"field": "health", "scale":
+	{"zero": false}, "type": "quantitative"}, "x":
+	{"field": "income", "scale":
+	{"type": "log"}, "type": "quantitative"}, "color":
+	{"value": "#000"}, "size":
+	{"field": "population", "type": "quantitative"}}, "height": 300, "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "mark": "circle", "data":
+	{"url": "data/gapminder-health-income.csv"}}, "layered_color_legend_left":
+	{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "scale":
+	{"domain": [20, 40]}, "type": "quantitative"}, "x":
+	{"field": "Horsepower", "scale":
+	{"domain": [75, 150]}, "type": "quantitative"}, "size":
+	{"field": "Cylinders", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"grid":
+	{"bind": "scales", "type": "interval"}}, "data":
+	{"url": "data/cars.json"}, "mark": "circle"}, "trellis_bar":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"timeUnit": "hours", "axis":
+	{"title": "time"}, "type": "temporal", "field": "date"}}, "data":
+	{"values": [{"date": "10 Oct 2011 22:48:00"}, {"date": "11 Oct 2022 23:00:00"}]}, "description": "Google's stock price over time.", "mark": "point"}, "selection_project_interval_x":
+	{"encoding":
+	{"y":
+	{"field": "Origin", "type": "ordinal"}, "x":
+	{"field": "Cylinders", "type": "ordinal"}, "color":
+	{"value": "grey", "condition":
+	{"aggregate": "count", "field": "*", "selection": "pts", "type": "quantitative"}}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"pts":
+	{"type": "interval", "encodings": ["x"]}}, "data":
+	{"url": "data/cars.json"}, "mark": "rect"}, "rule_color_mean":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "mean", "field": "price", "type": "quantitative"}, "color":
+	{"field": "symbol", "type": "nominal"}, "size":
+	{"value": 2}}, "data":
+	{"url": "data/stocks.csv"}, "description": "Average Stock prices of 5 Tech Companies.", "mark": "rule"}, "scatter_color_ordinal_custom":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "color":
+	{"field": "Cylinders", "scale":
+	{"range": ["pink", "red"]}, "type": "ordinal"}}, "data":
+	{"url": "data/cars.json"}, "mark": "point"}, "tick_sort":
+	{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "size":
+	{"value": 50, "condition":
+	{"selection": "paintbrush", "value": 300}}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"paintbrush":
+	{"on": "mouseover", "type": "multi"}}, "data":
+	{"url": "data/cars.json"}, "mark": "point"}, "scatter_bubble":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "size":
+	{"field": "Acceleration", "type": "quantitative"}}, "data":
+	{"url": "data/cars.json"}, "description": "A bubbleplot showing horsepower on x, miles per gallons on y, and binned acceleration on size.", "mark": "point"}, "tick_strip":
+	{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "scale":
+	{"domain": [20, 40]}, "type": "quantitative"}, "x":
+	{"field": "Horsepower", "scale":
+	{"domain": [75, 150]}, "type": "quantitative"}, "size":
+	{"field": "Cylinders", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"grid":
+	{"bind": "scales", "type": "interval"}}, "data":
+	{"url": "data/cars.json"}, "mark": "circle"}, "point_overlap":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{}, "data":
+	{"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "point"}, "bar_month":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "mean", "field": "precipitation", "type": "quantitative"}, "x":
+	{"timeUnit": "month", "type": "temporal", "field": "date"}}, "data":
+	{"url": "data/seattle-weather.csv"}, "mark": "bar"}, "repeat_splom_iris":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "repeat":
+	{"column": ["sepalLength", "sepalWidth", "petalLength", "petalWidth"], "row": ["petalWidth", "petalLength", "sepalWidth", "sepalLength"]}, "data":
+	{"url": "data/iris.json"}, "spec":
+	{"encoding":
+	{"y":
+	{"field":
+	{"repeat": "row"}, "scale":
+	{"zero": false}, "type": "quantitative"}, "x":
+	{"field":
+	{"repeat": "column"}, "scale":
+	{"zero": false}, "type": "quantitative"}, "color":
+	{"field": "species", "type": "nominal"}}, "mark": "point"}}, "box-plot_minmax_1D_horizontal":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"x":
+	{"field": "people", "type": "quantitative", "axis":
+	{"title": "population"}}}, "data":
+	{"url": "data/population.json"}, "description": "A 1D horizontal box plot showing median, min, and max in the US population distribution of age groups in 2000.", "mark": "box-plot"}, "stacked_bar_count":
+	{"description": "Google's stock price over time.", "encoding":
+	{"y":
+	{"field": "price", "type": "quantitative"}, "x":
+	{"field": "date", "type": "temporal"}}, "transform": [{"filter": "datum.symbol==='GOOG'"}], "mark":
+	{"type": "line", "interpolate": "step-after"}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/stocks.csv"}}, "layer_precipitation_mean":
+	{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "color":
+	{"value": "grey", "condition":
+	{"field": "Cylinders", "selection": "paintbrush", "type": "ordinal"}}, "size":
+	{"value": 75}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"paintbrush":
+	{"type": "multi"}}, "data":
+	{"url": "data/cars.json"}, "mark": "circle"}, "rect_binned_heatmap":
+	{"encoding":
+	{"y":
+	{"bin":
+	{"maxbins": 40}, "field": "Rotten_Tomatoes_Rating", "type": "quantitative"}, "x":
+	{"bin":
+	{"maxbins": 60}, "field": "IMDB_Rating", "type": "quantitative"}, "color":
+	{"aggregate": "count", "type": "quantitative"}}, "config":
+	{"cell":
+	{"stroke": "transparent"}, "range":
+	{"heatmap":
+	{"scheme": "greenblue"}}}, "height": 200, "width": 300, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "mark": "rect", "data":
+	{"url": "data/movies.json"}}, "minimal":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "sum", "field": "people", "type": "quantitative", "stack": "normalize", "axis":
+	{"title": "population"}}, "x":
+	{"field": "age", "scale":
+	{"rangeStep": 17}, "type": "ordinal"}, "color":
+	{"field": "gender", "scale":
+	{"range": ["#EA98D2", "#659CCA"]}, "type": "nominal"}}, "data":
+	{"url": "data/population.json"}, "transform": [{"filter": "datum.year == 2000"}, {"as": "gender", "calculate": "datum.sex == 2 ? 'Female' : 'Male'"}], "mark": "bar"}, "selection_project_single_cylinders":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "resolve":
+	{"y":
+	{"scale": "independent"}}, "data":
+	{"url": "data/seattle-weather.csv"}, "description": "Barchart for precipitation overlayed with linecharts to show temperature range.", "layer": [{"encoding":
+	{"y":
+	{"aggregate": "mean", "field": "precipitation", "type": "quantitative", "axis":
+	{"grid": false, "title": "Mean Precipitation"}}, "x":
+	{"timeUnit": "month", "type": "temporal", "field": "date"}}, "mark": "bar"}, {"layer": [{"encoding":
+	{"y":
+	{"aggregate": "max", "field": "temp_max", "scale":
+	{"zero": false}, "type": "quantitative", "axis":
+	{"grid": false, "title": "Temperature (min and max)"}}, "x":
+	{"timeUnit": "month", "type": "temporal", "field": "date"}, "color":
+	{"value": "firebrick"}}, "mark": "line"}, {"encoding":
+	{"y":
+	{"aggregate": "min", "field": "temp_min", "scale":
+	{"zero": false}, "type": "quantitative", "axis":
+	{"grid": false}}, "x":
+	{"timeUnit": "month", "type": "temporal", "field": "date"}, "color":
+	{"value": "firebrick"}}, "mark": "line"}]}]}, "layered_crossfilter":
+	{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "scale":
+	{"domain": [20, 40]}, "type": "quantitative"}, "x":
+	{"field": "Horsepower", "scale":
+	{"domain": [75, 150]}, "type": "quantitative"}, "size":
+	{"field": "Cylinders", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"grid":
+	{"bind": "scales", "translate": "[mousedown[event.shiftKey], window:mouseup] > window:mousemove!", "type": "interval"}}, "data":
+	{"url": "data/cars.json"}, "mark": "circle"}, "selection_project_single":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "resolve":
+	{"y":
+	{"scale": "independent"}}, "data":
+	{"url": "data/seattle-weather.csv"}, "layer": [{"encoding":
+	{"y":
+	{"aggregate": "mean", "field": "precipitation", "type": "quantitative", "axis":
+	{"grid": false}}, "x":
+	{"timeUnit": "month", "type": "temporal", "field": "date"}}, "mark": "bar"}, {"encoding":
+	{"y":
+	{"aggregate": "mean", "field": "temp_max", "scale":
+	{"zero": false}, "type": "quantitative", "axis":
+	{"grid": false}}, "x":
+	{"timeUnit": "month", "type": "temporal", "field": "date"}, "color":
+	{"value": "firebrick"}}, "mark": "line"}]}, "field_spaces":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "mark": "point", "data":
+	{"values": [{"a b": 0.9228935641885049, "c d": 0.5982771352733822}, {"a b": 0.6819537235661846, "c d": 0.4599852852378238}, {"a b": 0.035533848836472814, "c d": 0.6863884491167203}, {"a b": 0.3491133898504284, "c d": 0.7368153745410643}, {"a b": 0.42475313594111874, "c d": 0.8129620247637963}, {"a b": 0.5239172250991592, "c d": 0.5616266265239936}, {"a b": 0.4668258532026234, "c d": 0.436625706645942}, {"a b": 0.2692059264553106, "c d": 0.2746758424896977}, {"a b": 0.6009825566170259, "c d": 0.2648775327299746}, {"a b": 0.7457746080337384, "c d": 0.15435369511584507}]}, "encoding":
+	{"y":
+	{"field": "c d", "type": "quantitative"}, "x":
+	{"field": "a b", "type": "quantitative"}}}, "selection_type_multi":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/cars.json"}, "description": "Drag out a rectangular brush to highlight points.", "layer": [{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "color":
+	{"field": "Cylinders", "type": "ordinal", "condition":
+	{"selection": "brush", "value": "grey"}}, "size":
+	{"value": 100}}, "selection":
+	{"grid":
+	{"bind": "scales", "translate": "[mousedown[!event.shiftKey], mouseup] > mousemove", "type": "interval"}, "cyl":
+	{"fields": ["Cylinders"], "type": "single", "bind":
+	{"input": "range", "max": 8, "step": 1, "min": 3}}}, "mark": "point"}, {"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "color":
+	{"value": "grey", "condition":
+	{"field": "Cylinders", "selection": "brush", "type": "ordinal"}}, "size":
+	{"condition":
+	{"selection": "cyl", "value": 150}, "value": 50}}, "selection":
+	{"brush":
+	{"on": "[mousedown[event.shiftKey], mouseup] > mousemove", "translate": "[mousedown[event.shiftKey], mouseup] > mousemove", "type": "interval"}}, "mark": "square"}]}, "errorbar_horizontal_aggregate":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/population.json"}, "description": "A bar chart showing the US population distribution of age groups in 2000.", "layer": [{"encoding":
+	{"y":
+	{"field": "age", "type": "ordinal"}, "x":
+	{"aggregate": "min", "field": "people", "type": "quantitative", "axis":
+	{"title": "population"}}, "x2":
+	{"aggregate": "max", "field": "people", "type": "quantitative"}}, "mark": "rule"}, {"encoding":
+	{"y":
+	{"field": "age", "type": "ordinal"}, "x":
+	{"aggregate": "min", "field": "people", "type": "quantitative", "axis":
+	{"title": "population"}}, "size":
+	{"value": 5}}, "mark": "tick"}, {"encoding":
+	{"y":
+	{"field": "age", "type": "ordinal"}, "x":
+	{"aggregate": "max", "field": "people", "type": "quantitative", "axis":
+	{"title": "population"}}, "size":
+	{"value": 5}}, "mark": "tick"}, {"encoding":
+	{"y":
+	{"field": "age", "type": "ordinal"}, "x":
+	{"aggregate": "mean", "field": "people", "type": "quantitative", "axis":
+	{"title": "population"}}, "size":
+	{"value": 2}}, "mark": "point"}], "transform": [{"filter": "datum.year == 2000"}]}, "bar_1d":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"x":
+	{"aggregate": "sum", "field": "people", "type": "quantitative", "axis":
+	{"title": "population"}}}, "data":
+	{"url": "data/population.json"}, "transform": [{"filter": "datum.year == 2000"}], "mark": "bar"}, "selection_type_interval":
+	{"width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"values": [{"population": 1309, "year": "1875"}, {"population": 1558, "year": "1890"}, {"population": 4512, "year": "1910"}, {"population": 8180, "year": "1925"}, {"population": 15915, "year": "1933"}, {"population": 24824, "year": "1939"}, {"population": 28275, "year": "1946"}, {"population": 29189, "year": "1950"}, {"population": 29881, "year": "1964"}, {"population": 26007, "year": "1971"}, {"population": 24029, "year": "1981"}, {"population": 23340, "year": "1985"}, {"population": 22307, "year": "1989"}, {"population": 22087, "year": "1990"}, {"population": 22139, "year": "1991"}, {"population": 22105, "year": "1992"}, {"population": 22242, "year": "1993"}, {"population": 22801, "year": "1994"}, {"population": 24273, "year": "1995"}, {"population": 25640, "year": "1996"}, {"population": 27393, "year": "1997"}, {"population": 29505, "year": "1998"}, {"population": 32124, "year": "1999"}, {"population": 33791, "year": "2000"}, {"population": 35297, "year": "2001"}, {"population": 36179, "year": "2002"}, {"population": 36829, "year": "2003"}, {"population": 37493, "year": "2004"}, {"population": 38376, "year": "2005"}, {"population": 39008, "year": "2006"}, {"population": 39366, "year": "2007"}, {"population": 39821, "year": "2008"}, {"population": 40179, "year": "2009"}, {"population": 40511, "year": "2010"}, {"population": 40465, "year": "2011"}, {"population": 40905, "year": "2012"}, {"population": 41258, "year": "2013"}, {"population": 41777, "year": "2014"}], "format":
+	{"parse":
+	{"year": "date:'%Y'"}}}, "description": "The population of the German city of Falkensee over time", "layer": [{"encoding":
+	{"x2":
+	{"field": "end", "type": "temporal", "timeUnit": "year"}, "x":
+	{"field": "start", "type": "temporal", "timeUnit": "year"}, "color":
+	{"field": "event", "type": "nominal"}}, "data":
+	{"values": [{"start": "1933", "end": "1945", "event": "Nazi Rule"}, {"start": "1948", "end": "1989", "event": "GDR (East Germany)"}], "format":
+	{"parse":
+	{"start": "date:'%Y'", "end": "date:'%Y'"}}}, "mark": "rect"}, {"encoding":
+	{"y":
+	{"field": "population", "type": "quantitative"}, "x":
+	{"field": "year", "type": "temporal", "timeUnit": "year"}, "color":
+	{"value": "#333"}}, "mark": "line"}, {"encoding":
+	{"y":
+	{"field": "population", "type": "quantitative"}, "x":
+	{"field": "year", "type": "temporal", "timeUnit": "year"}, "color":
+	{"value": "#333"}}, "mark": "point"}]}, "stacked_bar_h_order":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{}, "data":
+	{"values": [{}]}, "mark": "point"}, "errorbar_aggregate":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/population.json"}, "description": "A error bar plot showing mean, min, and max in the US population distribution of age groups in 2000.", "layer": [{"encoding":
+	{"y":
+	{"aggregate": "min", "field": "people", "type": "quantitative", "axis":
+	{"title": "population"}}, "x":
+	{"field": "age", "type": "ordinal"}, "y2":
+	{"aggregate": "max", "field": "people", "type": "quantitative"}}, "mark": "rule"}, {"encoding":
+	{"y":
+	{"aggregate": "min", "field": "people", "type": "quantitative", "axis":
+	{"title": "population"}}, "x":
+	{"field": "age", "type": "ordinal"}, "size":
+	{"value": 5}}, "mark": "tick"}, {"encoding":
+	{"y":
+	{"aggregate": "max", "field": "people", "type": "quantitative", "axis":
+	{"title": "population"}}, "x":
+	{"field": "age", "type": "ordinal"}, "size":
+	{"value": 5}}, "mark": "tick"}, {"encoding":
+	{"y":
+	{"aggregate": "mean", "field": "people", "type": "quantitative", "axis":
+	{"title": "population"}}, "x":
+	{"field": "age", "type": "ordinal"}, "size":
+	{"value": 2}}, "mark": "point"}], "transform": [{"filter": "datum.year == 2000"}]}, "point_1d_array":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"column":
+	{"field": "MPAA_Rating", "type": "ordinal"}, "x":
+	{"field": "Worldwide_Gross", "type": "quantitative"}, "y":
+	{"field": "US_DVD_Sales", "type": "quantitative"}}, "data":
+	{"url": "data/movies.json"}, "mark": "point"}, "concat_selections":
+	{"vconcat": [{"encoding":
+	{"y":
+	{"field": "Horsepower", "type": "quantitative"}, "x":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}}, "selection":
+	{"brush":
+	{"resolve": "global", "type": "interval", "encodings": ["x", "y"]}}, "mark": "point"}, {"encoding":
+	{"y":
+	{"field": "Acceleration", "type": "quantitative"}, "x":
+	{"field": "Displacement", "type": "quantitative"}, "color":
+	{"condition":
+	{"selection": "brush", "value": "steelblue"}, "value": "red"}}, "selection":
+	{"grid":
+	{"bind": "scales", "type": "interval"}}, "mark": "point"}], "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/cars.json"}}, "selection_toggle_altKey":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "config":
+	{"overlay":
+	{"line": true}}, "layer": [{"encoding":
+	{"y":
+	{"aggregate": "max", "bin": false, "type": "quantitative", "field": "Horsepower"}, "x":
+	{"field": "Cylinders", "type": "ordinal"}, "color":
+	{"value": "darkred"}}, "data":
+	{"url": "data/cars.json"}, "mark": "line"}, {"encoding":
+	{"y":
+	{"aggregate": "min", "bin": false, "type": "quantitative", "field": "Horsepower"}, "x":
+	{"field": "Cylinders", "type": "ordinal"}}, "data":
+	{"url": "data/cars.json"}, "mark": "line"}]}, "scatter_log":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "y", "scale":
+	{"type": "log"}, "type": "quantitative"}, "x":
+	{"field": "x", "type": "quantitative"}}, "data":
+	{"values": [{"y": 1, "x": 0}, {"y": 10, "x": 1}, {"y": 100, "x": 2}, {"y": 1000, "x": 3}, {"y": 10000, "x": 4}, {"y": 100000, "x": 5}, {"y": 1000000, "x": 6}, {"y": 10000000, "x": 7}]}, "mark": "point"}, "layered_crossfilter_discrete":
+	{"encoding":
+	{"y":
+	{"field": "Origin", "type": "ordinal"}, "x":
+	{"field": "Cylinders", "type": "ordinal"}, "color":
+	{"value": "grey", "condition":
+	{"aggregate": "count", "field": "*", "selection": "pts", "type": "quantitative"}}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"pts":
+	{"type": "interval"}}, "data":
+	{"url": "data/cars.json"}, "mark": "rect"}, "point_2d_array":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "b", "type": "quantitative"}, "x":
+	{"field": "a", "type": "nominal"}}, "data":
+	{"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "name": "plotname", "mark": "point"}, "line_slope":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "count", "field": "*", "type": "quantitative"}, "x":
+	{"timeUnit": "month", "type": "temporal", "field": "date"}, "color":
+	{"field": "weather", "type": "nominal"}}, "data":
+	{"url": "data/seattle-weather.csv"}, "mark": "bar"}, "histogram_no_spacing":
+	{"config":
+	{"bar":
+	{"binSpacing": 0}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "count", "type": "quantitative"}, "x":
+	{"bin":
+	{"maxbins": 10}, "field": "IMDB_Rating", "type": "quantitative"}}, "data":
+	{"url": "data/movies.json"}, "mark": "bar"}, "scatter_colored_with_shape":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "shape":
+	{"field": "Origin", "type": "nominal"}, "color":
+	{"field": "Origin", "type": "nominal"}}, "data":
+	{"url": "data/cars.json"}, "description": "A scatterplot showing horsepower and miles per gallons.", "mark": "point"}, "overlay_line_full":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "count", "type": "quantitative"}, "x":
+	{"field": "date", "axis":
+	{"title": "Month of the year"}, "type": "temporal", "timeUnit": "month"}, "color":
+	{"field": "weather", "scale":
+	{"domain": ["sun", "fog", "drizzle", "rain", "snow"], "range": ["#e7ba52", "#c7c7c7", "#aec7e8", "#1f77b4", "#9467bd"]}, "type": "nominal", "legend":
+	{"title": "Weather type"}}}, "data":
+	{"url": "data/seattle-weather.csv"}, "mark": "bar"}, "layer_bar_dual_axis":
+	{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "color":
+	{"value": "grey", "condition":
+	{"field": "Cylinders", "selection": "pts", "type": "ordinal", "scale":
+	{"scheme": "yelloworangebrown"}}}, "size":
+	{"value": 50, "condition":
+	{"selection": "pts", "value": 200}}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"pts":
+	{"fields": ["Cylinders"], "type": "single"}}, "data":
+	{"url": "data/cars.json"}, "mark": "point"}, "selection_translate_brush_drag":
+	{"config":
+	{"text":
+	{"baseline": "middle"}, "scale":
+	{"bandPaddingInner": 0, "bandPaddingOuter": 0}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/cars.json"}, "layer": [{"encoding":
+	{"y":
+	{"field": "Origin", "type": "ordinal"}, "x":
+	{"field": "Cylinders", "type": "ordinal"}, "color":
+	{"aggregate": "count", "field": "*", "type": "quantitative"}}, "mark": "rect"}, {"encoding":
+	{"y":
+	{"field": "Origin", "type": "ordinal"}, "x":
+	{"field": "Cylinders", "type": "ordinal"}, "color":
+	{"value": "white"}, "text":
+	{"aggregate": "count", "field": "*", "type": "quantitative"}}, "mark": "text"}]}, "bar_swap_custom":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "a", "type": "nominal"}, "x":
+	{"aggregate": "average", "field": "b", "type": "quantitative", "axis":
+	{"title": "Average of b"}}}, "data":
+	{"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "bar"}, "panzoom_splom":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"column":
+	{"field": "Series", "type": "nominal"}, "x":
+	{"field": "X", "scale":
+	{"zero": false}, "type": "quantitative"}, "opacity":
+	{"value": 1}, "y":
+	{"field": "Y", "scale":
+	{"zero": false}, "type": "quantitative"}}, "data":
+	{"url": "data/anscombe.json"}, "description": "Anscombe's Quartet", "mark": "circle"}, "stacked_bar_sum_opacity":
+	{"description": "Google's stock price over time.", "encoding":
+	{"y":
+	{"field": "price", "type": "quantitative"}, "x":
+	{"field": "date", "type": "temporal"}}, "config":
+	{"overlay":
+	{"area": "linepoint"}}, "transform": [{"filter": "datum.symbol==='GOOG'"}], "mark": "area", "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/stocks.csv"}}, "bar_array_aggregate":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "average", "field": "b", "type": "quantitative"}, "x":
+	{"field": "a", "type": "nominal"}}, "data":
+	{"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "bar"}, "paintbrush_color_nearest":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"x":
+	{"sort": "descending", "field": "Horsepower", "type": "quantitative"}}, "data":
+	{"url": "data/cars.json"}, "mark": "tick"}, "box-plot_minmax_2D_horizontal":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "age", "type": "ordinal"}, "x":
+	{"field": "people", "type": "quantitative", "axis":
+	{"title": "population"}}, "size":
+	{"value": 5}}, "data":
+	{"url": "data/population.json"}, "description": "A horizontal box plot showing median, min, and max in the US population distribution of age groups in 2000.", "mark": "box-plot"}, "repeat_histogram":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "repeat":
+	{"column": ["Horsepower", "Miles_per_Gallon", "Acceleration"]}, "spec":
+	{"encoding":
+	{"y":
+	{"aggregate": "count", "type": "quantitative"}, "x":
+	{"bin": true, "field":
+	{"repeat": "column"}, "type": "quantitative"}, "color":
+	{"field": "Origin", "type": "nominal"}}, "data":
+	{"url": "data/cars.json"}, "mark": "bar"}}, "line_quarter_legend":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"color":
+	{"field": "Origin", "type": "nominal"}, "x":
+	{"aggregate": "sum", "field": "Acceleration", "type": "quantitative"}}, "data":
+	{"url": "data/cars.json"}, "mark": "bar"}, "timeunit_selections":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "repeat":
+	{"column": ["Miles_per_Gallon", "Acceleration", "Horsepower"], "row": ["Horsepower", "Acceleration", "Miles_per_Gallon"]}, "data":
+	{"url": "data/cars.json"}, "spec":
+	{"encoding":
+	{"y":
+	{"field":
+	{"repeat": "row"}, "type": "quantitative"}, "x":
+	{"field":
+	{"repeat": "column"}, "type": "quantitative"}, "color":
+	{"field": "Origin", "type": "nominal"}}, "selection":
+	{"grid":
+	{"bind": "scales", "type": "interval"}}, "mark": "point"}}, "square":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "mean", "field": "precipitation", "type": "quantitative"}, "x":
+	{"timeUnit": "month", "type": "temporal", "field": "date"}}, "data":
+	{"url": "data/seattle-weather.csv"}, "mark": "line"}, "bar_size_rangestep_small":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "b", "type": "quantitative"}, "x":
+	{"field": "a", "scale":
+	{"rangeStep": 11}, "type": "ordinal"}}, "data":
+	{"values": [{"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43}, {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53}, {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}]}, "description": "A simple bar chart with embedded data.", "mark": "bar"}, "stacked_bar_population":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "price", "type": "quantitative"}, "x":
+	{"field": "date", "type": "temporal", "timeUnit": "utcyearmonthdatehoursminutes"}}, "data":
+	{"values": [{"date": "Sun, 01 Jan 2012 23:00:00", "price": 150}, {"date": "Sun, 02 Jan 2012 00:00:00", "price": 100}, {"date": "Sun, 02 Jan 2012 01:00:00", "price": 170}, {"date": "Sun, 02 Jan 2012 02:00:00", "price": 165}, {"date": "Sun, 02 Jan 2012 03:00:00", "price": 200}]}, "description": "Google's stock price over time.", "mark": "line"}, "selection_project_multi_cylinders_origin":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "repeat":
+	{"column": ["Miles_per_Gallon", "Acceleration", "Horsepower"], "row": ["Horsepower", "Acceleration", "Miles_per_Gallon"]}, "spec":
+	{"encoding":
+	{"y":
+	{"field":
+	{"repeat": "row"}, "type": "quantitative"}, "x":
+	{"field":
+	{"repeat": "column"}, "type": "quantitative"}, "color":
+	{"value": "grey", "condition":
+	{"field": "Origin", "selection": "brush", "type": "nominal"}}}, "selection":
+	{"grid":
+	{"bind": "scales", "resolve": "global", "type": "interval", "translate": "[mousedown[!event.shiftKey], window:mouseup] > window:mousemove!", "zoom": "wheel![!event.shiftKey]"}, "brush":
+	{"on": "[mousedown[event.shiftKey], window:mouseup] > window:mousemove!", "resolve": "union", "type": "interval", "translate": "[mousedown[event.shiftKey], window:mouseup] > window:mousemove!", "zoom": "wheel![event.shiftKey]"}}, "data":
+	{"url": "data/cars.json"}, "mark": "point"}}, "trellis_anscombe":
+	{"vconcat": [{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}}, "selection":
+	{"region":
+	{"bind": "scales", "type": "interval"}}, "mark": "point"}, {"encoding":
+	{"y":
+	{"field": "Acceleration", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}}, "mark": "point"}], "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "resolve":
+	{"x":
+	{"scale": "shared"}}, "data":
+	{"url": "data/cars.json"}}, "bar_size_default":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "count", "field": "*", "type": "quantitative"}, "x":
+	{"field": "Origin", "scale":
+	{"rangeStep": 25}, "type": "nominal"}}, "data":
+	{"url": "data/cars.json"}, "mark": "bar"}, "trellis_column_year":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"x":
+	{"field": "IMDB_Rating", "type": "quantitative"}}, "data":
+	{"url": "data/movies.json"}, "mark": "point"}, "trellis_scatter":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"x":
+	{"bin":
+	{"maxbins": 10}, "field": "IMDB_Rating", "type": "quantitative"}}, "data":
+	{"url": "data/movies.json"}, "mark": "point"}, "scatter_binned_opacity":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "opacity":
+	{"bin": true, "field": "Acceleration", "type": "quantitative"}}, "data":
+	{"url": "data/cars.json"}, "description": "A scatterplot showing horsepower and miles per gallons with binned acceleration on opacity.", "mark": "point"}, "area":
+	{"encoding":
+	{"y":
+	{"aggregate": "sum", "field": "count", "type": "quantitative"}, "x":
+	{"timeUnit": "yearmonth", "axis":
+	{"labelAngle": 0, "format": "%Y"}, "scale":
+	{"nice": "month"}, "type": "temporal", "field": "date"}}, "mark": "area", "width": 300, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "height": 200, "data":
+	{"url": "data/unemployment-across-industries.json"}}, "trellis_stacked_bar":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "b", "type": "quantitative"}, "x":
+	{"field": "a", "type": "nominal"}}, "data":
+	{"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "point"}, "stacked_bar_1d":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "median", "field": "yield", "type": "quantitative"}, "x":
+	{"field": "year", "scale":
+	{"padding": 0.5, "rangeStep": 50}, "type": "ordinal"}, "color":
+	{"field": "site", "type": "nominal"}}, "data":
+	{"url": "data/barley.json"}, "description": "Slope graph showing the change in yield for different barley sites. It shows the error in the year labels for the Morris site.", "mark": "line"}, "bar_grouped":
+	{"encoding":
+	{"column":
+	{"field": "age", "type": "ordinal"}, "y":
+	{"aggregate": "sum", "field": "people", "type": "quantitative", "axis":
+	{"grid": false, "title": "population"}}, "color":
+	{"field": "gender", "scale":
+	{"range": ["#EA98D2", "#659CCA"]}, "type": "nominal"}, "x":
+	{"field": "gender", "scale":
+	{"rangeStep": 12}, "type": "nominal", "axis":
+	{"title": ""}}}, "data":
+	{"url": "data/population.json"}, "transform": [{"filter": "datum.year == 2000"}, {"as": "gender", "calculate": "datum.sex == 2 ? 'Female' : 'Male'"}], "mark": "bar", "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "config":
+	{"cell":
+	{"stroke": "transparent"}, "axis":
+	{"domainWidth": 1}}}, "area_vertical":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"timeUnit": "year", "type": "temporal", "field": "Year"}, "x":
+	{"aggregate": "sum", "field": "Weight_in_lbs", "type": "quantitative"}}, "data":
+	{"url": "data/cars.json"}, "description": "Area chart showing weight of cars over time (vertical).", "mark":
+	{"type": "area", "interpolate": "monotone"}}, "repeat_histogram_flights":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "repeat":
+	{"column": ["distance", "delay", "time"]}, "data":
+	{"url": "data/flights-2k.json", "format":
+	{"parse":
+	{"date": "date"}}}, "transform": [{"as": "time", "calculate": "hours(datum.date)"}], "spec":
+	{"encoding":
+	{"y":
+	{"aggregate": "count", "type": "quantitative"}, "x":
+	{"bin":
+	{"maxbins": 20}, "field":
+	{"repeat": "column"}, "type": "quantitative"}}, "mark": "bar"}}, "query_widgets":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/cars.json"}, "description": "Drag the sliders to highlight points.", "layer": [{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "color":
+	{"value": "grey", "condition":
+	{"field": "Origin", "selection": "CylYr", "type": "nominal"}}}, "selection":
+	{"CylYr":
+	{"fields": ["Cylinders", "Year"], "type": "single", "bind":
+	{"Cylinders":
+	{"input": "range", "max": 8, "step": 1, "min": 3}, "Year":
+	{"input": "range", "max": 1981, "step": 1, "min": 1969}}}}, "mark": "circle"}, {"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "color":
+	{"field": "Origin", "type": "nominal"}, "size":
+	{"value": 100}}, "transform": [{"filter":
+	{"selection": "CylYr"}}], "mark": "circle"}], "transform": [{"as": "Year", "calculate": "year(datum.Year)"}]}, "line_mean_year":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"color":
+	{"field": "Cylinders", "type": "nominal"}, "y":
+	{"aggregate": "sum", "bin": false, "type": "quantitative", "field": "Horsepower"}, "x":
+	{"bin":
+	{}, "field": "Acceleration", "type": "quantitative"}}, "data":
+	{"url": "data/cars.json"}, "mark": "area"}, "parse_utc_time_format":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "mean", "field": "price", "type": "quantitative"}, "x":
+	{"field": "date", "type": "temporal", "timeUnit": "quarter"}, "column":
+	{"field": "date", "type": "temporal", "timeUnit": "year"}, "color":
+	{"field": "symbol", "type": "nominal"}}, "data":
+	{"url": "data/stocks.csv"}, "description": "Stock price mean per quarter broken down by years.", "mark": "line"}, "stacked_bar_normalize":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "price", "type": "quantitative"}, "x":
+	{"field": "date", "scale":
+	{"type": "utc"}, "type": "temporal", "timeUnit": "yearmonthdatehoursminutes"}}, "data":
+	{"values": [{"date": "Sun, 01 Jan 2012 23:00:00", "price": 150}, {"date": "Sun, 02 Jan 2012 00:00:00", "price": 100}, {"date": "Sun, 02 Jan 2012 01:00:00", "price": 170}, {"date": "Sun, 02 Jan 2012 02:00:00", "price": 165}, {"date": "Sun, 02 Jan 2012 03:00:00", "price": 200}]}, "description": "Google's stock price over time.", "mark": "line"}, "scatter_connected":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/driving.json"}, "layer": [{"encoding":
+	{"y":
+	{"field": "gas", "scale":
+	{"zero": false}, "type": "quantitative"}, "x":
+	{"field": "miles", "scale":
+	{"zero": false}, "type": "quantitative"}, "order":
+	{"field": "year", "type": "temporal"}}, "mark": "line"}, {"encoding":
+	{"y":
+	{"field": "gas", "scale":
+	{"zero": false}, "type": "quantitative"}, "x":
+	{"field": "miles", "scale":
+	{"zero": false}, "type": "quantitative"}}, "mark": "point"}]}, "bar_grouped_horizontal":
+	{"encoding":
+	{"y":
+	{"field": "gender", "scale":
+	{"rangeStep": 6}, "type": "nominal", "axis": null}, "x":
+	{"aggregate": "sum", "field": "people", "type": "quantitative", "axis":
+	{"grid": false, "title": "population"}}, "color":
+	{"field": "gender", "scale":
+	{"range": ["#EA98D2", "#659CCA"]}, "type": "nominal"}, "row":
+	{"field": "age", "type": "ordinal"}}, "data":
+	{"url": "data/population.json"}, "transform": [{"filter": "datum.year == 2000"}, {"as": "gender", "calculate": "datum.sex == 2 ? 'Female' : 'Male'"}], "mark": "bar", "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "config":
+	{"cell":
+	{"stroke": "transparent"}, "axis":
+	{"domainWidth": 1}}}, "histogram_sort_mean":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"sort":
+	{"field": "Horsepower", "op": "mean"}, "field": "Origin", "type": "ordinal"}, "x":
+	{"aggregate": "mean", "field": "Horsepower", "type": "quantitative"}}, "data":
+	{"url": "data/cars.json"}, "mark": "bar"}, "trellis_row_column":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"x":
+	{"field": "a", "type": "nominal"}}, "data":
+	{"values": [{"a": "C", "b": 2}, {"a": "C", "b": 7}, {"a": "C", "b": 4}, {"a": "D", "b": 1}, {"a": "D", "b": 2}, {"a": "D", "b": 6}, {"a": "E", "b": 8}, {"a": "E", "b": 4}, {"a": "E", "b": 7}]}, "mark": "point"}, "selection_composition_or":
+	{"encoding":
+	{"y":
+	{"field": "Origin", "type": "ordinal"}, "x":
+	{"field": "Cylinders", "type": "ordinal"}, "color":
+	{"value": "grey", "condition":
+	{"aggregate": "count", "field": "*", "selection":
+	{"or": ["alex", "morgan"]}, "type": "quantitative"}}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"alex":
+	{"on": "[mousedown[!event.shiftKey], mouseup] > mousemove", "type": "interval"}, "morgan":
+	{"on": "[mousedown[event.shiftKey], mouseup] > mousemove", "type": "interval", "mark":
+	{"stroke": "#e34a33", "fillOpacity": 0.5, "fill": "#fdbb84"}}}, "data":
+	{"url": "data/cars.json"}, "mark": "rect"}, "histogram":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "count", "type": "quantitative"}, "x":
+	{"bin":
+	{"maxbins": 10}, "field": "IMDB_Rating", "type": "quantitative"}}, "data":
+	{"url": "data/movies.json"}, "mark": "bar"}, "line_month":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "sum", "field": "Weight_in_lbs", "type": "quantitative"}, "x":
+	{"timeUnit": "year", "type": "temporal", "field": "Year"}, "color":
+	{"field": "Cylinders", "type": "ordinal"}}, "data":
+	{"url": "data/cars.json"}, "mark":
+	{"type": "area", "interpolate": "monotone"}}, "tick_dot":
+	{"selection":
+	{"paintbrush":
+	{"on": "mouseover", "type": "multi"}}, "description": "Select multiple points with the shift key.", "encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "color":
+	{"value": "grey", "condition":
+	{"field": "Cylinders", "selection": "paintbrush", "type": "ordinal"}}, "size":
+	{"value": 75}}, "mark": "circle", "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/cars.json"}}, "point_filled":
+	{"config":
+	{"mark":
+	{"filled": true}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}}, "data":
+	{"url": "data/cars.json"}, "mark": "point"}, "scatter_tooltip":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "tooltip":
+	{"field": "Origin", "type": "nominal"}}, "data":
+	{"url": "data/cars.json"}, "description": "A scatterplot showing horsepower and miles per gallons for various cars.", "mark": "point"}, "line":
+	{"encoding":
+	{"y":
+	{"field": "Origin", "type": "ordinal"}, "x":
+	{"field": "Cylinders", "type": "ordinal"}, "color":
+	{"value": "grey", "condition":
+	{"aggregate": "count", "field": "*", "selection": "pts", "type": "quantitative"}}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"pts":
+	{"on": "dblclick", "type": "single"}}, "data":
+	{"url": "data/cars.json"}, "mark": "rect"}, "rect_heatmap":
+	{"config":
+	{"range":
+	{"heatmap":
+	{"scheme": "greenblue"}}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "Origin", "type": "ordinal"}, "x":
+	{"field": "Cylinders", "type": "ordinal"}, "color":
+	{"aggregate": "mean", "field": "Horsepower", "type": "quantitative"}}, "data":
+	{"url": "data/cars.json"}, "mark": "rect"}, "selection_translate_scatterplot_drag":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "repeat":
+	{"column": ["distance", "delay", "time"]}, "data":
+	{"url": "data/flights-2k.json", "format":
+	{"parse":
+	{"date": "date"}}}, "transform": [{"as": "time", "calculate": "hours(datum.date)"}], "spec":
+	{"layer": [{"encoding":
+	{"y":
+	{"aggregate": "count", "type": "quantitative"}, "x":
+	{"bin":
+	{"maxbins": 20}, "field":
+	{"repeat": "column"}, "type": "quantitative"}}, "selection":
+	{"brush":
+	{"type": "interval", "encodings": ["x"]}}, "mark": "bar"}, {"encoding":
+	{"y":
+	{"aggregate": "count", "type": "quantitative"}, "x":
+	{"bin":
+	{"maxbins": 20}, "field":
+	{"repeat": "column"}, "type": "quantitative"}, "color":
+	{"value": "goldenrod"}}, "transform": [{"filter":
+	{"selection": "brush"}}], "mark": "bar"}]}}, "bar_size_explicit_bad":
+	{"encoding":
+	{"y":
+	{"aggregate": "count", "type": "quantitative"}, "x":
+	{"field": "Name", "scale":
+	{"round": false}, "type": "nominal"}}, "mark": "bar", "width": 120, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "height": 120, "data":
+	{"url": "data/cars.json"}}, "selection_resolution_global":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/seattle-weather.csv"}, "layer": [{"encoding":
+	{"y":
+	{"aggregate": "mean", "field": "precipitation", "type": "quantitative"}, "x":
+	{"timeUnit": "month", "type": "temporal", "field": "date"}}, "mark": "bar"}, {"encoding":
+	{"y":
+	{"aggregate": "mean", "field": "precipitation", "type": "quantitative"}, "color":
+	{"value": "firebrick"}, "size":
+	{"value": 3}}, "mark": "rule"}]}, "scatter_binned":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"bin":
+	{"maxbins": 10}, "field": "Rotten_Tomatoes_Rating", "type": "quantitative"}, "x":
+	{"bin":
+	{"maxbins": 10}, "field": "IMDB_Rating", "type": "quantitative"}, "size":
+	{"aggregate": "count", "type": "quantitative"}}, "data":
+	{"url": "data/movies.json"}, "mark": "circle"}, "panzoom_scatter":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"values": [{"date": "Sun, 01 Jan 2012 23:00:01", "price": 150}, {"date": "Sun, 02 Jan 2012 00:10:02", "price": 100}, {"date": "Sun, 02 Jan 2012 01:20:03", "price": 170}, {"date": "Sun, 02 Jan 2012 02:30:04", "price": 165}, {"date": "Sun, 02 Jan 2012 03:40:05", "price": 200}]}, "hconcat": [{"encoding":
+	{"y":
+	{"field": "price", "type": "quantitative"}, "x":
+	{"field": "date", "type": "temporal", "timeUnit": "seconds"}, "color":
+	{"value": "steelblue", "condition":
+	{"selection": "brush", "value": "goldenrod"}}}, "selection":
+	{"brush":
+	{"type": "interval", "encodings": ["x"]}}, "mark": "point"}, {"encoding":
+	{"y":
+	{"field": "price", "type": "quantitative"}, "x":
+	{"field": "date", "type": "temporal", "timeUnit": "minutes"}, "color":
+	{"value": "goldenrod"}}, "transform": [{"filter":
+	{"selection": "brush"}}], "mark": "point"}]}, "bar_aggregate_size":
+	{"description": "A bar chart showing the US population distribution of age groups in 2000.", "encoding":
+	{"y":
+	{"aggregate": "sum", "field": "people", "type": "quantitative", "axis":
+	{"title": "population"}}, "x":
+	{"field": "age", "scale":
+	{"rangeStep": 17}, "type": "ordinal"}, "size":
+	{"value": 10}}, "transform": [{"filter": "datum.year == 2000"}], "mark": "bar", "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/population.json"}}, "selection_type_single":
+	{"description": "Google's stock price over time.", "encoding":
+	{"y":
+	{"field": "price", "type": "quantitative"}, "x":
+	{"field": "date", "type": "temporal"}}, "transform": [{"filter": "datum.symbol==='GOOG'"}], "mark": "line", "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/stocks.csv"}}, "stacked_bar_size":
+	{"layer": [{"encoding":
+	{"y":
+	{"field": "price", "type": "quantitative"}, "x":
+	{"field": "date", "type": "temporal"}}, "mark": "area"}, {"encoding":
+	{"y":
+	{"field": "price", "type": "quantitative"}, "x":
+	{"field": "date", "type": "temporal"}}, "mark": "line"}, {"encoding":
+	{"y":
+	{"field": "price", "type": "quantitative"}, "x":
+	{"field": "date", "type": "temporal"}}, "mark": "point"}], "description": "Google's stock price over time.", "data":
+	{"url": "data/stocks.csv"}, "transform": [{"filter": "datum.symbol==='GOOG'"}], "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "config":
+	{"mark":
+	{"filled": true}}}, "selection_zoom_scatterplot_shift-wheel":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "price", "type": "quantitative"}, "x":
+	{"field": "date", "type": "temporal"}, "detail":
+	{"field": "symbol", "type": "nominal"}}, "data":
+	{"url": "data/stocks.csv"}, "description": "Stock prices of 5 Tech Companies Over Time.", "mark": "line"}, "facet_independent_scale":
+	{"resolve":
+	{"x":
+	{"scale": "independent"}}, "description": "A trellis bar chart showing the US population distribution of age groups and gender in 2000.", "config":
+	{"cell":
+	{"fill": "yellow"}}, "transform": [{"filter": "datum.year == 2000"}, {"as": "gender", "calculate": "datum.sex == 2 ? 'Female' : 'Male'"}], "facet":
+	{"column":
+	{"field": "gender", "type": "nominal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/population.json"}, "spec":
+	{"encoding":
+	{"y":
+	{"aggregate": "sum", "field": "people", "type": "quantitative", "axis":
+	{"title": "population"}}, "x":
+	{"field": "age", "scale":
+	{"rangeStep": 17}, "type": "ordinal"}, "color":
+	{"field": "gender", "scale":
+	{"range": ["#EA98D2", "#659CCA"]}, "type": "nominal"}}, "mark": "bar"}}, "selection_project_multi_cylinders":
+	{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "color":
+	{"value": "grey", "condition":
+	{"field": "Cylinders", "selection": "pts", "type": "ordinal", "scale":
+	{"scheme": "yelloworangebrown"}}}, "size":
+	{"value": 50, "condition":
+	{"selection": "pts", "value": 200}}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"pts":
+	{"fields": ["Cylinders"], "type": "multi"}}, "data":
+	{"url": "data/cars.json"}, "mark": "point"}, "selection_project_interval_y":
+	{"encoding":
+	{"y":
+	{"field": "Origin", "type": "ordinal"}, "x":
+	{"field": "Cylinders", "type": "ordinal"}, "color":
+	{"value": "grey", "condition":
+	{"aggregate": "count", "field": "*", "selection": "pts", "type": "quantitative"}}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"pts":
+	{"type": "interval", "encodings": ["y"]}}, "data":
+	{"url": "data/cars.json"}, "mark": "rect"}, "facet_cross_independent_scale":
+	{"facet":
+	{"column":
+	{"field": "c", "type": "nominal"}, "row":
+	{"field": "r", "type": "nominal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "resolve":
+	{"y":
+	{"scale": "independent"}, "x":
+	{"scale": "independent"}}, "data":
+	{"values": [{"a": "a1", "c": "c1", "r": "r1", "b": "b1"}, {"a": "a2", "c": "c1", "r": "r1", "b": "b2"}, {"a": "a1", "c": "c2", "r": "r2", "b": "b1"}, {"a": "a3", "c": "c2", "r": "r3", "b": "b2"}]}, "spec":
+	{"encoding":
+	{"y":
+	{"field": "b", "type": "nominal"}, "x":
+	{"field": "a", "type": "nominal"}}, "mark": "rect"}}, "repeat_layer":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "repeat":
+	{"column": ["temp_max", "precipitation", "wind"]}, "data":
+	{"url": "data/weather.csv"}, "description": "Summarized and per year weather information for Seatle and New York.", "spec":
+	{"layer": [{"encoding":
+	{"y":
+	{"aggregate": "mean", "field":
+	{"repeat": "column"}, "type": "quantitative"}, "x":
+	{"timeUnit": "month", "type": "temporal", "field": "date"}, "opacity":
+	{"value": 0.2}, "detail":
+	{"timeUnit": "year", "type": "temporal", "field": "date"}, "color":
+	{"field": "location", "type": "nominal"}}, "mark": "line"}, {"encoding":
+	{"y":
+	{"aggregate": "mean", "field":
+	{"repeat": "column"}, "type": "quantitative"}, "x":
+	{"timeUnit": "month", "type": "temporal", "field": "date"}, "color":
+	{"field": "location", "type": "nominal"}}, "mark": "line"}]}}, "scatter":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}}, "data":
+	{"url": "data/cars.json"}, "description": "A scatterplot showing horsepower and miles per gallons for various cars.", "mark": "point"}, "layer_candlestick":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "repeat":
+	{"column": ["Horsepower", "Acceleration", "Miles_per_Gallon"], "row": ["Horsepower", "Acceleration", "Miles_per_Gallon"]}, "data":
+	{"url": "data/cars.json"}, "spec":
+	{"encoding":
+	{"y":
+	{"field":
+	{"repeat": "column"}, "type": "quantitative"}, "x":
+	{"field":
+	{"repeat": "row"}, "type": "quantitative"}, "color":
+	{"value": "grey", "condition":
+	{"field": "Origin", "selection": "brush", "type": "nominal"}}}, "selection":
+	{"brush":
+	{"resolve": "union", "type": "interval"}}, "mark": "point"}}, "layer_overlay":
+	{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "color":
+	{"value": "grey", "condition":
+	{"field": "Cylinders", "selection": "paintbrush", "type": "ordinal"}}, "size":
+	{"value": 75}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"paintbrush":
+	{"toggle": "event.altKey && event.shiftKey", "type": "multi"}}, "data":
+	{"url": "data/cars.json"}, "mark": "circle"}, "scatter_shape_custom":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "shape":
+	{"value": "M0,0.2L0.2351,0.3236 0.1902,0.0618 0.3804,-0.1236 0.1175,-0.1618 0,-0.4 -0.1175,-0.1618 -0.3804,-0.1236 -0.1902,0.0618 -0.2351,0.3236 0,0.2Z"}, "color":
+	{"field": "Cylinders", "type": "nominal"}, "size":
+	{"field": "Weight_in_lbs", "type": "quantitative"}}, "data":
+	{"url": "data/cars.json"}, "description": "A scatterplot with custom star shapes.", "mark": "point"}, "selection_project_single_origin":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"values": [{"a": "A", "c": 28, "b": "B"}, {"a": "B", "c": 55, "b": "C"}, {"a": "C", "c": 43, "b": "D"}, {"a": "D", "c": 91, "b": "E"}, {"a": "E", "c": 81, "b": "F"}, {"a": "F", "c": 53, "b": "G"}, {"a": "G", "c": 19, "b": "H"}, {"a": "H", "c": 87, "b": "I"}, {"a": "I", "c": 52, "b": "J"}]}, "layer": [{"encoding":
+	{"y":
+	{"field": "c", "type": "quantitative"}, "x":
+	{"field": "a", "type": "ordinal"}}, "mark": "bar"}, {"encoding":
+	{"y":
+	{"field": "c", "type": "quantitative"}, "x":
+	{"field": "b", "type": "ordinal"}, "color":
+	{"value": "red"}}, "mark": "line"}]}, "scatter_opacity":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "opacity":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}}, "data":
+	{"url": "data/cars.json"}, "mark": "circle"}, "interval_mark_style":
+	{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "color":
+	{"value": "grey", "condition":
+	{"field": "Cylinders", "selection": "pts", "type": "ordinal", "scale":
+	{"scheme": "yelloworangebrown"}}}, "size":
+	{"value": 50, "condition":
+	{"selection": "pts", "value": 200}}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"pts":
+	{"type": "single"}}, "data":
+	{"url": "data/cars.json"}, "mark": "point"}, "scatter_color_ordinal":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "color":
+	{"field": "Cylinders", "type": "ordinal"}}, "data":
+	{"url": "data/cars.json"}, "mark": "point"}, "stacked_area_normalize":
+	{"config":
+	{"axis":
+	{"shortTimeLabels": true}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "mean", "field": "temp", "type": "quantitative"}, "x":
+	{"timeUnit": "month", "type": "temporal", "field": "date"}}, "data":
+	{"url": "data/seattle-temps.csv"}, "mark":
+	{"type": "line", "interpolate": "monotone"}}, "selection_layer_bar_month":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/seattle-weather.csv"}, "layer": [{"encoding":
+	{"y":
+	{"aggregate": "mean", "field": "precipitation", "type": "quantitative"}, "x":
+	{"timeUnit": "month", "type": "temporal", "field": "date"}, "opacity":
+	{"value": 0.7, "condition":
+	{"selection": "brush", "value": 1}}}, "selection":
+	{"brush":
+	{"type": "interval", "encodings": ["x"]}}, "mark": "bar"}, {"encoding":
+	{"y":
+	{"aggregate": "mean", "field": "precipitation", "type": "quantitative"}, "color":
+	{"value": "firebrick"}, "size":
+	{"value": 3}}, "transform": [{"filter":
+	{"selection": "brush"}}], "mark": "rule"}]}, "github_punchcard":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "time", "type": "temporal", "timeUnit": "day"}, "x":
+	{"field": "time", "type": "temporal", "timeUnit": "hours"}, "size":
+	{"aggregate": "sum", "field": "count", "type": "quantitative"}}, "data":
+	{"url": "data/github.csv"}, "mark": "circle"}, "histogram_bin_change":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "count", "field": "*", "type": "quantitative"}, "x":
+	{"bin":
+	{"maxbins": 30}, "field": "IMDB_Rating", "type": "quantitative"}}, "data":
+	{"url": "data/movies.json"}, "mark": "bar"}, "selection_bind_cylyr":
+	{"selection":
+	{"CylYr":
+	{"fields": ["Cylinders", "Year"], "type": "single", "bind":
+	{"Cylinders":
+	{"input": "range", "max": 8, "step": 1, "min": 3}, "Year":
+	{"input": "range", "max": 1981, "step": 1, "min": 1969}}}}, "encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "color":
+	{"value": "grey", "condition":
+	{"field": "Origin", "selection": "CylYr", "type": "nominal"}}, "size":
+	{"value": 50, "condition":
+	{"selection": "CylYr", "value": 100}}}, "transform": [{"as": "Year", "calculate": "year(datum.Year)"}], "mark": "circle", "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/cars.json"}}, "stacked_area":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "mean", "field": "temp_max", "type": "quantitative"}, "x":
+	{"timeUnit": "year", "type": "temporal", "field": "date"}}, "data":
+	{"url": "data/seattle-weather.csv"}, "mark": "line"}, "bar_size_explicit":
+	{"encoding":
+	{"y":
+	{"aggregate": "count", "type": "quantitative"}, "x":
+	{"field": "Origin", "type": "nominal"}}, "mark": "bar", "width": 120, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "height": 120, "data":
+	{"url": "data/cars.json"}}, "line_step":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "variety", "type": "nominal"}, "x":
+	{"aggregate": "sum", "field": "yield", "type": "quantitative"}, "color":
+	{"field": "site", "type": "nominal"}}, "data":
+	{"url": "data/barley.json"}, "mark": "bar"}, "selection_translate_scatterplot_shift-drag":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "repeat":
+	{"column": ["distance", "delay", "time"]}, "data":
+	{"url": "data/flights-2k.json", "format":
+	{"parse":
+	{"date": "date"}}}, "transform": [{"as": "time", "calculate": "hours(datum.date)"}], "spec":
+	{"layer": [{"encoding":
+	{"y":
+	{"aggregate": "count", "type": "quantitative"}, "x":
+	{"bin":
+	{"maxbins": 20}, "field":
+	{"repeat": "column"}, "type": "quantitative"}}, "selection":
+	{"brush":
+	{"type": "multi", "encodings": ["x"]}}, "mark": "bar"}, {"encoding":
+	{"y":
+	{"aggregate": "count", "type": "quantitative"}, "x":
+	{"bin":
+	{"maxbins": 20}, "field":
+	{"repeat": "column"}, "type": "quantitative"}, "color":
+	{"value": "goldenrod"}}, "transform": [{"filter":
+	{"selection": "brush"}}], "mark": "bar"}]}}, "interactive_splom":
+	{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "shape":
+	{"value": "circle", "condition":
+	{"field": "Origin", "selection": "pts", "type": "nominal", "scale":
+	{"range": ["triangle-left", "triangle-right", "triangle-up"]}}}, "color":
+	{"value": "grey", "condition":
+	{"field": "Cylinders", "selection": "pts", "type": "ordinal", "scale":
+	{"scheme": "yelloworangebrown"}}}, "size":
+	{"value": 50, "condition":
+	{"selection": "pts", "value": 200}}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"pts":
+	{"fields": ["Origin"], "type": "multi"}}, "data":
+	{"url": "data/cars.json"}, "mark": "point"}, "selection_composition_and":
+	{"encoding":
+	{"y":
+	{"field": "Origin", "type": "ordinal"}, "x":
+	{"field": "Cylinders", "type": "ordinal"}, "color":
+	{"value": "grey", "condition":
+	{"aggregate": "count", "field": "*", "selection":
+	{"and": ["alex", "morgan"]}, "type": "quantitative"}}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"alex":
+	{"on": "[mousedown[!event.shiftKey], mouseup] > mousemove", "type": "interval"}, "morgan":
+	{"on": "[mousedown[event.shiftKey], mouseup] > mousemove", "type": "interval", "mark":
+	{"stroke": "#e34a33", "fillOpacity": 0.5, "fill": "#fdbb84"}}}, "data":
+	{"url": "data/cars.json"}, "mark": "rect"}, "bar_layered_transparent":
+	{"description": "A bar chart showing the US population distribution of age groups and gender in 2000.", "encoding":
+	{"y":
+	{"aggregate": "sum", "field": "people", "type": "quantitative", "stack": "none", "axis":
+	{"title": "population"}}, "x":
+	{"field": "age", "scale":
+	{"rangeStep": 17}, "type": "ordinal"}, "opacity":
+	{"value": 0.7}, "color":
+	{"field": "gender", "scale":
+	{"range": ["#e377c2", "#1f77b4"]}, "type": "nominal"}}, "transform": [{"filter": "datum.year == 2000"}, {"as": "gender", "calculate": "datum.sex == 2 ? 'Female' : 'Male'"}], "mark": "bar", "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/population.json"}}, "line_color_binned":
+	{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "scale":
+	{"domain": [20, 40]}, "type": "quantitative"}, "x":
+	{"field": "Horsepower", "scale":
+	{"domain": [75, 150]}, "type": "quantitative"}, "size":
+	{"field": "Cylinders", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"grid":
+	{"bind": "scales", "type": "interval", "zoom": "wheel![event.shiftKey]"}}, "data":
+	{"url": "data/cars.json"}, "mark": "circle"}, "selection_zoom_scatterplot_wheel":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "max", "field": "temp_max", "type": "quantitative"}, "x":
+	{"timeUnit": "yearmonth", "type": "temporal", "field": "date"}}, "data":
+	{"url": "data/seattle-weather.csv"}, "mark": "line"}, "stacked_area_ordinal":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "mean", "field": "price", "type": "quantitative"}, "x":
+	{"field": "date", "type": "temporal", "timeUnit": "quarter"}, "column":
+	{"field": "date", "type": "temporal", "timeUnit": "year"}, "color":
+	{"field": "symbol", "type": "nominal"}}, "data":
+	{"url": "data/stocks.csv"}, "description": "Stock price mean per quarter broken down by years.", "mark": "point"}, "bar_tooltip":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "b", "type": "quantitative"}, "x":
+	{"field": "a", "type": "ordinal"}, "tooltip":
+	{"field": "b", "type": "quantitative"}}, "data":
+	{"values": [{"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43}, {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53}, {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}]}, "description": "A simple bar chart with embedded data.", "mark": "bar"}, "selection_resolution_union":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/flights-2k.json"}, "layer": [{"encoding":
+	{"y":
+	{"aggregate": "count", "type": "quantitative"}, "x":
+	{"bin": true, "field": "distance", "type": "quantitative"}}, "mark": "bar"}, {"encoding":
+	{"y":
+	{"aggregate": "count", "type": "quantitative"}, "x":
+	{"bin": true, "field": "distance", "type": "quantitative"}, "color":
+	{"value": "goldenrod"}}, "transform": [{"filter": "datum.delay < 500"}], "mark": "bar"}]}, "lookup":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "variety", "type": "nominal"}, "x":
+	{"aggregate": "sum", "field": "yield", "type": "quantitative"}, "order":
+	{"aggregate": "sum", "field": "yield", "type": "quantitative"}, "color":
+	{"field": "site", "type": "nominal"}}, "data":
+	{"url": "data/barley.json"}, "mark": "bar"}, "line_max_year":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}}, "data":
+	{"url": "data/cars.json"}, "mark": "square"}, "facet_column_facet_row_point":
+	{"facet":
+	{"column":
+	{"field": "Origin", "type": "ordinal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/cars.json"}, "spec":
+	{"facet":
+	{"row":
+	{"field": "Cylinders", "type": "ordinal"}}, "spec":
+	{"encoding":
+	{"y":
+	{"field": "Acceleration", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}}, "mark": "point"}}}, "bar_aggregate_vertical":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "mean", "field": "Acceleration", "type": "quantitative"}, "x":
+	{"field": "Cylinders", "type": "ordinal"}}, "data":
+	{"url": "data/cars.json"}, "mark": "bar"}, "facet_column_facet_column_point":
+	{"facet":
+	{"column":
+	{"field": "Origin", "type": "ordinal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/cars.json"}, "spec":
+	{"facet":
+	{"column":
+	{"field": "Cylinders", "type": "ordinal"}}, "spec":
+	{"encoding":
+	{"y":
+	{"field": "Acceleration", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}}, "mark": "point"}}}, "layer_bar_month":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "repeat":
+	{"column": ["Horsepower", "Acceleration", "Miles_per_Gallon"], "row": ["Horsepower", "Acceleration", "Miles_per_Gallon"]}, "data":
+	{"url": "data/cars.json"}, "spec":
+	{"encoding":
+	{"y":
+	{"field":
+	{"repeat": "column"}, "type": "quantitative"}, "x":
+	{"field":
+	{"repeat": "row"}, "type": "quantitative"}, "color":
+	{"value": "grey", "condition":
+	{"field": "Origin", "selection": "brush", "type": "nominal"}}}, "selection":
+	{"brush":
+	{"resolve": "intersect", "type": "interval"}}, "mark": "point"}}, "paintbrush":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"x":
+	{"field": "precipitation", "type": "quantitative"}}, "data":
+	{"url": "data/seattle-weather.csv"}, "mark": "tick"}, "point_color":
+	{"config":
+	{"mark":
+	{"color": "purple"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{}, "data":
+	{"values": [{"a": 2}]}, "mark": "point"}, "diverging_color_points":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "color":
+	{"field": "Weight_in_lbs", "scale":
+	{"domain": [1000, 2750, 4500], "range": ["#ff7f0e", "#e7ba52", "#17becf"]}, "type": "quantitative"}}, "data":
+	{"url": "data/cars.json"}, "description": "A bubbleplot showing horsepower on x, miles per gallons on y, and weight with a diverging color scale.", "mark": "point"}, "bar_size_fit":
+	{"encoding":
+	{"y":
+	{"aggregate": "count", "type": "quantitative"}, "x":
+	{"field": "Origin", "scale":
+	{"rangeStep": null}, "type": "nominal"}}, "mark": "bar", "width": 200, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "height": 200, "data":
+	{"url": "data/cars.json"}}, "layered_falkensee":
+	{"encoding":
+	{"y":
+	{"field": "Origin", "type": "ordinal"}, "x":
+	{"field": "Cylinders", "type": "ordinal"}, "color":
+	{"value": "grey", "condition":
+	{"aggregate": "count", "field": "*", "selection": "pts", "type": "quantitative"}}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"pts":
+	{"type": "multi"}}, "data":
+	{"url": "data/cars.json"}, "mark": "rect"}, "selection_filter":
+	{"vconcat": [{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}}, "selection":
+	{"brush":
+	{"type": "interval"}}, "mark": "point"}, {"encoding":
+	{"y":
+	{"field": "Displacement", "scale":
+	{"domain": [0, 500]}, "type": "quantitative"}, "x":
+	{"field": "Acceleration", "scale":
+	{"domain": [0, 25]}, "type": "quantitative"}}, "transform": [{"filter":
+	{"selection": "brush"}}], "mark": "point"}], "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/cars.json"}}, "layered_selections":
+	{"encoding":
+	{"y":
+	{"field": "Origin", "type": "ordinal"}, "x":
+	{"field": "Cylinders", "type": "ordinal"}, "color":
+	{"value": "grey", "condition":
+	{"aggregate": "count", "field": "*", "selection": "pts", "type": "quantitative"}}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"pts":
+	{"type": "single"}}, "data":
+	{"url": "data/cars.json"}, "mark": "rect"}, "tick_dot_thickness":
+	{"selection":
+	{"paintbrush":
+	{"on": "mouseover", "type": "multi", "nearest": true}}, "description": "Select multiple points with the shift key.", "encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "color":
+	{"value": "grey", "condition":
+	{"field": "Cylinders", "selection": "paintbrush", "type": "ordinal"}}, "size":
+	{"value": 75}}, "mark": "circle", "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/cars.json"}}, "scatter_color_shape_constant":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "shape":
+	{"value": "square"}, "color":
+	{"value": "#ff9900"}}, "data":
+	{"url": "data/cars.json"}, "mark": "point"}, "point_dot_timeunit_color":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"color":
+	{"timeUnit": "yearmonth", "type": "temporal", "field": "date"}, "x":
+	{"aggregate": "mean", "field": "temp", "type": "quantitative"}}, "data":
+	{"url": "data/seattle-temps.csv"}, "mark": "point"}, "scatter_binned_color":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "color":
+	{"bin":
+	{"maxbins": 5}, "field": "Acceleration", "type": "quantitative"}}, "data":
+	{"url": "data/cars.json"}, "description": "A scatterplot showing horsepower and miles per gallons with binned acceleration on color.", "mark": "point"}, "selection_resolution_intersect":
+	{"width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/population.json"}, "description": "A horizontal box plot showing median, min, and max in the US population distribution of age groups in 2000.", "layer": [{"encoding":
+	{"y":
+	{"field": "age", "type": "ordinal"}, "x":
+	{"field": "people", "type": "quantitative", "axis":
+	{"title": "population"}}}, "mark": "box-plot"}, {"encoding":
+	{"y":
+	{"field": "age", "type": "ordinal"}, "x":
+	{"field": "people", "type": "quantitative", "axis":
+	{"title": "population"}}, "opacity":
+	{"value": 0.1}, "color":
+	{"value": "black"}}, "mark": "circle"}]}, "parse_utc_time":
+	{"name": "trellis_barley", "encoding":
+	{"y":
+	{"sort":
+	{"field": "yield", "order": "descending", "op": "median"}, "field": "variety", "scale":
+	{"rangeStep": 12}, "type": "ordinal"}, "x":
+	{"aggregate": "median", "field": "yield", "scale":
+	{"zero": false}, "type": "quantitative"}, "color":
+	{"field": "year", "type": "nominal"}, "row":
+	{"field": "site", "type": "ordinal"}}, "mark": "point", "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/barley.json"}, "description": "The Trellis display by Becker et al. helped establish small multiples as a \u201cpowerful mechanism for understanding interactions in studies of how a response depends on explanatory variables\u201d. Here we reproduce a trellis of Barley yields from the 1930s, complete with main-effects ordering to facilitate comparison."}, "bar_1d_rangestep_config":
+	{"encoding":
+	{"x":
+	{"aggregate": "sum", "field": "people", "type": "quantitative", "axis":
+	{"title": "population"}}}, "data":
+	{"url": "data/population.json"}, "transform": [{"filter": "datum.year == 2000"}], "mark": "bar", "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "config":
+	{"scale":
+	{"rangeStep": 21}}}, "selection_project_interval":
+	{"encoding":
+	{"y":
+	{"field": "Origin", "type": "ordinal"}, "x":
+	{"field": "Cylinders", "type": "ordinal"}, "color":
+	{"value": "grey", "condition":
+	{"aggregate": "count", "field": "*", "selection": "pts", "type": "quantitative"}}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"pts":
+	{"type": "interval"}}, "data":
+	{"url": "data/cars.json"}, "mark": "rect"}, "layer_histogram":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "repeat":
+	{"column": ["Horsepower", "Acceleration", "Miles_per_Gallon"], "row": ["Horsepower", "Acceleration", "Miles_per_Gallon"]}, "data":
+	{"url": "data/cars.json"}, "spec":
+	{"encoding":
+	{"y":
+	{"field":
+	{"repeat": "column"}, "type": "quantitative"}, "x":
+	{"field":
+	{"repeat": "row"}, "type": "quantitative"}, "color":
+	{"value": "grey", "condition":
+	{"field": "Origin", "selection": "brush", "type": "nominal"}}}, "selection":
+	{"brush":
+	{"resolve": "union_others", "type": "interval"}}, "mark": "point"}}, "layer_single_color":
+	{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "scale":
+	{"domain": [20, 40]}, "type": "quantitative"}, "x":
+	{"field": "Horsepower", "scale":
+	{"domain": [75, 150]}, "type": "quantitative"}, "color":
+	{"value": "grey", "condition":
+	{"field": "Origin", "selection": "brush", "type": "nominal"}}, "size":
+	{"field": "Cylinders", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"brush":
+	{"type": "interval"}}, "data":
+	{"url": "data/cars.json"}, "mark":
+	{"type": "circle", "clip": true}}, "bar_distinct":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "distinct", "field": "Name", "type": "quantitative"}, "x":
+	{"field": "Origin", "type": "nominal"}}, "data":
+	{"url": "data/cars.json"}, "mark": "bar"}, "point_ordinal_color":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "y", "type": "quantitative"}, "x":
+	{"field": "x", "type": "quantitative"}, "color":
+	{"field": "a", "type": "ordinal"}}, "data":
+	{"values": [{"a": "B", "x": 2, "y": 2}, {"a": "A", "x": 1, "y": 1}, {"a": "A", "x": 4, "y": 4}, {"a": "B", "x": 5, "y": 5}, {"a": "C", "x": 3, "y": 3}, {"a": "C", "x": 6, "y": 6}]}, "mark": "point"}, "faceted_selections":
+	{"selection":
+	{"xenc":
+	{"on": "mouseover", "resolve": "global", "nearest": true, "fields": ["X"], "bind":
+	{"input": "number"}, "type": "single"}, "grid":
+	{"bind": "scales", "resolve": "global", "type": "interval", "translate": "[mousedown[!event.shiftKey], mouseup] > mousemove"}, "brush":
+	{"on": "[mousedown[event.shiftKey], mouseup] > mousemove", "resolve": "intersect", "type": "interval", "translate": "[mousedown[event.shiftKey], mouseup] > mousemove", "encodings": ["x"]}}, "description": "Anscombe's Quartet", "encoding":
+	{"opacity":
+	{"value": 1}, "column":
+	{"field": "Series", "type": "nominal"}, "color":
+	{"condition":
+	{"selection": "xenc", "value": "red"}, "value": "steelblue"}, "y":
+	{"field": "Y", "scale":
+	{"zero": false}, "type": "quantitative"}, "x":
+	{"field": "X", "scale":
+	{"zero": false}, "type": "quantitative"}, "size":
+	{"condition":
+	{"selection": "brush", "value": 250}, "value": 100}}, "mark": "circle", "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/anscombe.json"}}, "bar_sort_by_count":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"aggregate": "count", "type": "quantitative"}, "x":
+	{"sort":
+	{"order": "descending", "op": "count"}, "field": "Cylinders", "type": "nominal"}}, "data":
+	{"url": "data/cars.json"}, "description": "A scatterplot showing horsepower and miles per gallons for various cars.", "mark": "bar"}, "overview_detail":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "color":
+	{"field": "Origin", "type": "nominal"}, "text":
+	{"field": "OriginInitial", "type": "nominal"}}, "data":
+	{"url": "data/cars.json"}, "transform": [{"as": "OriginInitial", "calculate": "datum.Origin[0]"}], "mark": "text"}, "selection_resolution_union_others":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/stocks.csv"}, "description": "Stock prices of 5 Tech Companies over Time with Averages.", "layer": [{"encoding":
+	{"y":
+	{"field": "price", "type": "quantitative"}, "x":
+	{"field": "date", "type": "temporal"}, "color":
+	{"field": "symbol", "type": "nominal"}}, "mark": "line"}, {"encoding":
+	{"y":
+	{"aggregate": "mean", "field": "price", "type": "quantitative"}, "color":
+	{"field": "symbol", "type": "nominal"}, "size":
+	{"value": 2}}, "mark": "rule"}]}, "scatter_color":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "color":
+	{"field": "Origin", "type": "nominal"}}, "data":
+	{"url": "data/cars.json"}, "mark": "point"}, "box-plot_minmax_1D_vertical":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "people", "type": "quantitative", "axis":
+	{"title": "population"}}}, "data":
+	{"url": "data/population.json"}, "description": "A vertical 1D box plot showing median, min, and max in the US population distribution of age groups in 2000.", "mark": "box-plot"}, "text_scatter_colored":
+	{"selection":
+	{"paintbrush":
+	{"on": "mouseover", "type": "multi", "nearest": true}}, "description": "Select multiple points with the shift key.", "encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "size":
+	{"value": 50, "condition":
+	{"selection": "paintbrush", "value": 300}}}, "mark": "point", "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"url": "data/cars.json"}}, "selection_project_single_cylinders_origin":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"values": [{"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43}, {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53}, {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}]}, "layer": [{"encoding":
+	{"y":
+	{"field": "b", "type": "quantitative"}, "x":
+	{"field": "a", "type": "ordinal"}}, "mark": "bar"}, {"encoding":
+	{"y":
+	{"field": "b", "type": "quantitative"}, "x":
+	{"field": "a", "type": "ordinal"}, "color":
+	{"value": "red"}}, "mark": "line"}]}, "paintbrush_color":
+	{"config":
+	{"tick":
+	{"bandSize": 10, "thickness": 2}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"x":
+	{"field": "Horsepower", "type": "quantitative"}}, "data":
+	{"url": "data/cars.json"}, "mark": "tick"}, "scatter_color_quantitative":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "color":
+	{"field": "Displacement", "type": "quantitative"}}, "data":
+	{"url": "data/cars.json"}, "mark": "point"}, "selection_project_interval_x_y":
+	{"encoding":
+	{"y":
+	{"field": "Origin", "type": "ordinal"}, "x":
+	{"field": "Cylinders", "type": "ordinal"}, "color":
+	{"value": "grey", "condition":
+	{"aggregate": "count", "field": "*", "selection": "pts", "type": "quantitative"}}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"pts":
+	{"type": "interval", "encodings": ["x", "y"]}}, "data":
+	{"url": "data/cars.json"}, "mark": "rect"}, "layer_line_color_rule":
+	{"encoding":
+	{"y":
+	{"field": "Miles_per_Gallon", "type": "quantitative"}, "x":
+	{"field": "Horsepower", "type": "quantitative"}, "color":
+	{"value": "grey", "condition":
+	{"field": "Cylinders", "selection": "paintbrush", "type": "ordinal"}}, "size":
+	{"value": 75}}, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "selection":
+	{"paintbrush":
+	{"toggle": "event.altKey", "type": "multi"}}, "data":
+	{"url": "data/cars.json"}, "mark": "circle"}, "dashboard_europe_pop":
+	{"$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data":
+	{"values": [{"Country": "Albania", "Code": "ALB", "Population_ages_65_and_above_of_total": 12.3963338706153, "Population_ages_15_64_of_total": 69.0574620108062}, {"Country": "Armenia", "Code": "ARM", "Population_ages_65_and_above_of_total": 10.8259833940416, "Population_ages_15_64_of_total": 70.7901217876325}, {"Country": "Austria", "Code": "AUT", "Population_ages_65_and_above_of_total": 18.7591300503032, "Population_ages_15_64_of_total": 67.0332301646914}, {"Country": "Azerbaijan", "Code": "AZE", "Population_ages_65_and_above_of_total": 5.62608981288436, "Population_ages_15_64_of_total": 72.4553638068118}, {"Country": "Belarus", "Code": "BLR", "Population_ages_65_and_above_of_total": 13.9809217228707, "Population_ages_15_64_of_total": 69.9508710458679}, {"Country": "Belgium", "Code": "BEL", "Population_ages_65_and_above_of_total": 18.2248164293518, "Population_ages_15_64_of_total": 64.8307418795963}, {"Country": "Bosnia and Herzegovina", "Code": "BIH", "Population_ages_65_and_above_of_total": 15.4439567753232, "Population_ages_15_64_of_total": 71.0579632250127}, {"Country": "Bulgaria", "Code": "BGR", "Population_ages_65_and_above_of_total": 20.0274777416446, "Population_ages_15_64_of_total": 65.8285064995643}, {"Country": "Channel Islands", "Code": "CHI", "Population_ages_65_and_above_of_total": 17.2684065195611, "Population_ages_15_64_of_total": 68.022872223444}, {"Country": "Croatia", "Code": "HRV", "Population_ages_65_and_above_of_total": 18.9370747517226, "Population_ages_15_64_of_total": 66.1722696675744}, {"Country": "Cyprus", "Code": "CYP", "Population_ages_65_and_above_of_total": 12.8454475242427, "Population_ages_15_64_of_total": 70.6035355702394}, {"Country": "Czech Republic", "Code": "CZE", "Population_ages_65_and_above_of_total": 18.075987656862, "Population_ages_15_64_of_total": 66.8821170374875}, {"Country": "Denmark", "Code": "DNK", "Population_ages_65_and_above_of_total": 18.9594398104384, "Population_ages_15_64_of_total": 64.1595524918413}, {"Country": "Estonia", "Code": "EST", "Population_ages_65_and_above_of_total": 18.7597043330657, "Population_ages_15_64_of_total": 65.1524732621339}, {"Country": "Finland", "Code": "FIN", "Population_ages_65_and_above_of_total": 20.4771837047151, "Population_ages_15_64_of_total": 63.1844856787288}, {"Country": "France", "Code": "FRA", "Population_ages_65_and_above_of_total": 19.1205109623995, "Population_ages_15_64_of_total": 62.3959557946308}, {"Country": "Georgia", "Code": "GEO", "Population_ages_65_and_above_of_total": 14.0256592059827, "Population_ages_15_64_of_total": 68.6468764031909}, {"Country": "Germany", "Code": "DEU", "Population_ages_65_and_above_of_total": 21.2406519413629, "Population_ages_15_64_of_total": 65.8735239308132}, {"Country": "Greece", "Code": "GRC", "Population_ages_65_and_above_of_total": 21.396558181815, "Population_ages_15_64_of_total": 64.001114781101}, {"Country": "Hungary", "Code": "HUN", "Population_ages_65_and_above_of_total": 17.8178985477761, "Population_ages_15_64_of_total": 67.6233936744744}, {"Country": "Iceland", "Code": "ISL", "Population_ages_65_and_above_of_total": 13.7138954238446, "Population_ages_15_64_of_total": 65.9664567048645}, {"Country": "Ireland", "Code": "IRL", "Population_ages_65_and_above_of_total": 13.1395030143128, "Population_ages_15_64_of_total": 65.079935543936}, {"Country": "Italy", "Code": "ITA", "Population_ages_65_and_above_of_total": 22.4098759007142, "Population_ages_15_64_of_total": 63.8797421672762}, {"Country": "Kazakhstan", "Code": "KAZ", "Population_ages_65_and_above_of_total": 6.73573774316427, "Population_ages_15_64_of_total": 66.5468630019269}, {"Country": "Kosovo", "Code": "XKX", "Population_ages_65_and_above_of_total": 6.77595628415301, "Population_ages_15_64_of_total": 67.5956284153006}, {"Country": "Kyrgyz Republic", "Code": "KGZ", "Population_ages_65_and_above_of_total": 4.22684522224216, "Population_ages_15_64_of_total": 64.3715060803419}, {"Country": "Latvia", "Code": "LVA", "Population_ages_65_and_above_of_total": 19.3677959383975, "Population_ages_15_64_of_total": 65.7100750417533}, {"Country": "Lithuania", "Code": "LTU", "Population_ages_65_and_above_of_total": 18.8477993888977, "Population_ages_15_64_of_total": 66.637321711156}, {"Country": "Luxembourg", "Code": "LUX", "Population_ages_65_and_above_of_total": 13.981414540389, "Population_ages_15_64_of_total": 69.5849129798452}, {"Country": "Moldova", "Code": "MDA", "Population_ages_65_and_above_of_total": 9.95793208822932, "Population_ages_15_64_of_total": 74.3086639941979}, {"Country": "Montenegro", "Code": "MNE", "Population_ages_65_and_above_of_total": 13.6450291715472, "Population_ages_15_64_of_total": 67.7000420274825}, {"Country": "Netherlands", "Code": "NLD", "Population_ages_65_and_above_of_total": 18.2304693863117, "Population_ages_15_64_of_total": 65.2462589355619}, {"Country": "Norway", "Code": "NOR", "Population_ages_65_and_above_of_total": 16.3329186310334, "Population_ages_15_64_of_total": 65.6985354157875}, {"Country": "Poland", "Code": "POL", "Population_ages_65_and_above_of_total": 15.5333238336452, "Population_ages_15_64_of_total": 69.5203957630148}, {"Country": "Portugal", "Code": "PRT", "Population_ages_65_and_above_of_total": 20.7914682047571, "Population_ages_15_64_of_total": 65.1552111668212}, {"Country": "Romania", "Code": "ROU", "Population_ages_65_and_above_of_total": 17.3139967333842, "Population_ages_15_64_of_total": 67.1654214752418}, {"Country": "Russian Federation", "Code": "RUS", "Population_ages_65_and_above_of_total": 13.3658426985027, "Population_ages_15_64_of_total": 69.8822387917186}, {"Country": "Serbia", "Code": "SRB", "Population_ages_65_and_above_of_total": 17.0823666319247, "Population_ages_15_64_of_total": 66.6173161713822}, {"Country": "Slovak Republic", "Code": "SVK", "Population_ages_65_and_above_of_total": 13.8450659736415, "Population_ages_15_64_of_total": 71.0312889656187}, {"Country": "Slovenia", "Code": "SVN", "Population_ages_65_and_above_of_total": 17.9683834689382, "Population_ages_15_64_of_total": 67.2471833486012}, {"Country": "Spain", "Code": "ESP", "Population_ages_65_and_above_of_total": 18.7894661035796, "Population_ages_15_64_of_total": 66.3288553181877}, {"Country": "Sweden", "Code": "SWE", "Population_ages_65_and_above_of_total": 19.9420190919181, "Population_ages_15_64_of_total": 62.7731014069742}, {"Country": "Switzerland", "Code": "CHE", "Population_ages_65_and_above_of_total": 18.0418460178465, "Population_ages_15_64_of_total": 67.1827980001116}, {"Country": "Tajikistan", "Code": "TJK", "Population_ages_65_and_above_of_total": 3.00628812918872, "Population_ages_15_64_of_total": 62.1561674893051}, {"Country": "Turkey", "Code": "TUR", "Population_ages_65_and_above_of_total": 7.53869755140193, "Population_ages_15_64_of_total": 66.790794681757}, {"Country": "Turkmenistan", "Code": "TKM", "Population_ages_65_and_above_of_total": 4.15507428861104, "Population_ages_15_64_of_total": 67.6209109068909}, {"Country": "Ukraine", "Code": "UKR", "Population_ages_65_and_above_of_total": 15.3061908119499, "Population_ages_15_64_of_total": 69.7661921081373}, {"Country": "United Kingdom", "Code": "GBR", "Population_ages_65_and_above_of_total": 17.7603695294859, "Population_ages_15_64_of_total": 64.4654096116544}, {"Country": "Uzbekistan", "Code": "UZB", "Population_ages_65_and_above_of_total": 4.6577368288371, "Population_ages_15_64_of_total": 66.8223460574423}, {"Country": "Macedonia", "Code": "MKD", "Population_ages_65_and_above_of_total": 12.3228189427425, "Population_ages_15_64_of_total": 70.7240914276147}]}, "hconcat": [{"selection":
+	{"brush":
+	{"type": "interval", "encodings": ["y"]}}, "height": 700, "encoding":
+	{"y":
+	{"sort":
+	{"field": "Population_ages_15_64_of_total", "order": "descending", "op": "min"}, "field": "Country", "type": "ordinal"}, "x":
+	{"field": "Population_ages_15_64_of_total", "type": "quantitative"}, "color":
+	{"value": "goldenrod", "condition":
+	{"selection":
+	{"not": "brush"}, "value": "steelblue"}}}, "mark": "bar"}, {"selection":
+	{"brush":
+	{"type": "interval", "encodings": ["y"]}}, "height": 700, "encoding":
+	{"y":
+	{"sort":
+	{"field": "Population_ages_65_and_above_of_total", "order": "descending", "op": "min"}, "field": "Country", "type": "ordinal"}, "x":
+	{"field": "Population_ages_65_and_above_of_total", "type": "quantitative"}, "color":
+	{"value": "goldenrod", "condition":
+	{"selection":
+	{"not": "brush"}, "value": "steelblue"}}}, "mark": "bar"}, {"selection":
+	{"brush":
+	{"type": "interval"}}, "width": 260, "height": 260, "encoding":
+	{"y":
+	{"field": "Population_ages_15_64_of_total", "scale":
+	{"zero": false}, "type": "quantitative"}, "x":
+	{"field": "Population_ages_65_and_above_of_total", "scale":
+	{"zero": false}, "type": "quantitative"}, "color":
+	{"value": "goldenrod", "condition":
+	{"selection":
+	{"not": "brush"}, "value": "steelblue"}}}, "mark": "point"}]}, "line_mean_month":
+	{"description": "Area chart showing weight of cars over time.", "encoding":
+	{"y":
+	{"aggregate": "sum", "field": "count", "type": "quantitative"}, "x":
+	{"timeUnit": "yearmonth", "axis":
+	{"labelAngle": 0, "format": "%Y"}, "scale":
+	{"nice": "month"}, "type": "temporal", "field": "date"}, "color":
+	{"field": "series", "scale":
+	{"scheme": "category20b"}, "type": "nominal"}}, "mark": "area", "width": 300, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "height": 200, "data":
+	{"url": "data/unemployment-across-industries.json"}}}
