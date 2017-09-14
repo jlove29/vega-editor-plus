@@ -10,6 +10,10 @@ const tableContainer = {
   overflowY: 'scroll'
 }
 
+const center = {
+  textAlign:'center'
+}
+
 class DataHeader extends React.Component {
   
   constructor(props) {
@@ -133,6 +137,7 @@ class DataHeader extends React.Component {
             <div key='container'>
               <div>
                   <Resizable width={320} height={200}>
+                  <div style={center}><b>⌃</b></div>
                   <div id='tableContainer' style={tableContainer}>
                     <div id='TableShow' />
                   </div>
